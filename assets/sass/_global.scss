@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900|Vollkorn&text=Keksihyl);
+
+html {
+    @include font(body);
+
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: color(black);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    @include font-size(body);
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}

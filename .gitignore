@@ -1,0 +1,7 @@
+.sass-cache
+.DS_Store
+*.css
+node_modules
+assets/images/icons/*.css
+assets/images/icons/preview.html
+assets/images/icons/png

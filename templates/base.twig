@@ -1,0 +1,81 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<header class="page-header">
+
+			<div class="super-header">
+				<div class="super-header__inner">
+					<nav class="super-header__nav">
+						<a href="#" class="super-header__item">Shopping Cart</a>
+						<a href="#" class="super-header__item">Checkout</a>
+					</nav>
+
+					<div class="super-header__selectors">
+						<select name="user-language" id="select-super-header-lang" class="super-header__selector--lang">
+							<option value="finnish">Finnish</option>
+							<option value="english">English</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="page-header__inner">
+
+				<div class="page-header__main">
+					<a href="/" class="page-header__logo-block" role="banner">
+						<img src="570x130" alt="4YourHealth logo" class="page-header__logo page-header__logo">
+					</a>
+
+					{% if menu.get_items %}
+						<nav class="page-header__nav">
+							{% for item in menu.get_items %}
+								<a href="{{item.get_link}}" class="page-header__nav-item">{{item.title}}</a>
+							{% endfor %}
+						</nav>
+					{% endif %}
+				</div>
+
+				<div class="page-header__side">
+					<div class="page-header__contact-block">
+						<a href="tel:00358405796202" class="page-header__contact-item">+358 40 579 6202</a>
+						<a href="mailto:4yourhealth@gmail.com" class="page-header__contact-item">4yourhealth@gmail.com</a>
+					</div>
+
+					<div class="page-header__side-bottom">
+						<div class="page-header__search-block">
+							<input type="search" class="page-header__search"><input type="submit" class="page-header__search-submit">
+						</div>
+						<div class="page-header__basket">0 item(s) - €0,00</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main id="content" role="main" class="page-content">
+			<div class="page-content__inner">
+				{% block content_full %}
+					<div class="wrapper {{sidebar_class}}">
+						{% block content %}
+							Sorry, no content
+						{% endblock %}
+					</div>
+					{% if sidebar %}
+						<aside class="page-sidebar">
+							{{sidebar}}
+						</aside>
+					{% endif %}
+				{% endblock %}
+			</div>
+		</main>
+
+		<footer class="page-footer">
+			<small class="page-footer__small">&copy; {{"now"|date('Y')}}</small>
+		</footer>
+	</body>
+</html>
