@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     };
 
 gulp.task('sass', function() {
-    gulp.src(paths.sass + '/*.scss')
+    gulp.src(paths.sass + '/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 3 versions']
