@@ -1,16 +1,22 @@
 $font: (
     body: (
-        stack: "'Lato', sans-serif",
-        weight: 400
+        stack: "Arial, 'Helvetica Neue', Helvetica, sans-serif",
+        weight: normal
     ),
-    logo: (
-        stack: "'Vollkorn', serif",
+    title: (
+        stack: "'PT Sans', sans-serif",
+        weight: 700
+    ),
+    subtitle: (
+        stack: "'PT Sans', sans-serif",
         weight: 400
     )
 );
 
 $font-size: (
     body: (
-        base: 16px
+        super-header: 14px,
+        tease: 16px,
+        base: 15px,
     )
 );

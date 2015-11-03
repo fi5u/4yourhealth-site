@@ -1,0 +1,43 @@
+.super-header {
+    @include font-size(body, super-header);
+    line-height: 35px;
+    background-color: color(gray, lightest);
+
+    &__inner {
+        @extend %layout-inner;
+    }
+
+        &__nav {
+            display: inline-block;
+        }
+
+            &__item {
+                margin-right: 32px;
+                color: color(gray);
+                text-decoration: none;
+
+                &--cart {
+                    @include icon(basket);
+                }
+
+                &--checkout {
+                    @include icon(ok);
+                }
+
+                &:hover {
+                    color: darken(color(gray), 10%);
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+        &__selectors {
+            float: right;
+        }
+
+            &__selector--lang {
+
+            }
+}

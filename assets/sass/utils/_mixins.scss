@@ -77,3 +77,11 @@
         @content;
     }
 }
+
+@mixin icon($key) {
+    @extend %icon-#{$key};
+
+    &:before {
+        @extend %icon;
+    }
+}

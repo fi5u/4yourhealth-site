@@ -1,11 +1,18 @@
 $colors: (
     black: (
-        base: #242423
+        base:       #000
     ),
     white: (
-        base: #fff
+        base:       #fff
     ),
     gray: (
-        base: #888
+        lightest:   #f5f5f5,
+        base:       #7f7d74,
+        darker:     #444645,
+    ),
+    green: (
+        lighter:    #a8bf00,
+        base:       #84bb26,
+        darker:     #7bae23,
     )
 );

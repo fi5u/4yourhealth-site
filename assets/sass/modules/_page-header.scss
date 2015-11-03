@@ -1,0 +1,59 @@
+.page-header {
+    border-top: 4px solid color(green, darker);
+
+    &__inner {
+        @extend %layout-inner;
+    }
+
+        &__main {
+
+        }
+
+            &__logo-block {
+
+            }
+
+                &__logo {
+
+                }
+
+            &__nav {
+
+            }
+
+                &__nav-item {
+
+                }
+
+    &__side {
+
+    }
+
+        &__contact-block {
+
+        }
+
+            &__contact-item {
+
+            }
+
+        &__side-bottom {
+
+        }
+
+            &__search-block {
+
+            }
+
+            &__search {
+
+            }
+
+            &__search-submit {
+
+            }
+
+        &__basket {
+
+        }
+}

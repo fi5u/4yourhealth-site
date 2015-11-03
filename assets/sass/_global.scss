@@ -1,4 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900|Vollkorn&text=Keksihyl);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700|Gudea);
+
+@font-face {
+    font-family: 'fontello';
+    src: url('assets/fonts/fontello.eot?9986338');
+    src: url('assets/fonts/fontello.eot?9986338#iefix') format('embedded-opentype'),
+        url('assets/fonts/fontello.woff?9986338') format('woff'),
+        url('assets/fonts/fontello.ttf?9986338') format('truetype'),
+        url('assets/fonts/fontello.svg?9986338#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html {
     @include font(body);

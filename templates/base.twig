@@ -13,7 +13,6 @@
             {% endif %}
         </title>
 	    <meta name="description" content="{{site.description}}">
-	    <link rel="stylesheet" href="{{site.theme.link}}/style.css" type="text/css" media="screen">
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +25,13 @@
 
 			<div class="super-header">
 				<div class="super-header__inner">
-					<nav class="super-header__nav">
-						<a href="#" class="super-header__item">Shopping Cart</a>
-						<a href="#" class="super-header__item">Checkout</a>
-					</nav>
+					{% if super_menu.get_items %}
+						<nav class="super-header__nav">
+							{% for item in super_menu.get_items %}
+								<a href="{{item.get_link}}" class="super-header__item {{ item.classes|join(' ') }}">{{item.title}}</a>
+							{% endfor %}
+						</nav>
+					{% endif %}
 
 					<div class="super-header__selectors">
 						<select name="user-language" id="select-super-header-lang" class="super-header__selector--lang">
@@ -50,7 +52,7 @@
 					{% if menu.get_items %}
 						<nav class="page-header__nav">
 							{% for item in menu.get_items %}
-								<a href="{{item.get_link}}" class="page-header__nav-item">{{item.title}}</a>
+								<a href="{{item.get_link}}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{item.title}}</a>
 							{% endfor %}
 						</nav>
 					{% endif %}
