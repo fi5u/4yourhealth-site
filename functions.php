@@ -13,17 +13,21 @@ class StarterSite extends TimberSite {
 
 	function __construct() {
 		include('includes/Wp_Enqueue_Scripts.class.php');
+		include('includes/Customize_Register.class.php');
 
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+		add_theme_support( 'site-logo' );
 
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-        add_action( 'wp_enqueue_scripts', array(new Wp_Enqueue_Scripts, 'enqueue_scripts') );
+        add_action( 'wp_enqueue_scripts', array( new Wp_Enqueue_Scripts, 'enqueue_scripts') );
+        add_action( 'customize_register', array( new Customize_Register, 'yourhealth_theme_customizer' ) );
+
 
 		parent::__construct();
 	}
@@ -43,6 +47,8 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['super_menu'] = new TimberMenu('super-menu');
 		$context['site'] = $this;
+		$context['site']->logo = get_theme_mod( 'yourhealth_logo' ) ? '<img src=' . esc_url( get_theme_mod( 'yourhealth_logo' ) ) . ' alt=' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '>' : $context['site']->name;
+
 		return $context;
 	}
 
