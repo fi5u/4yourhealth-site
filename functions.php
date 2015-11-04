@@ -47,7 +47,7 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
 		$context['super_menu'] = new TimberMenu('super-menu');
 		$context['site'] = $this;
-		$context['site']->logo = get_theme_mod( 'yourhealth_logo' ) ? '<img src=' . esc_url( get_theme_mod( 'yourhealth_logo' ) ) . ' alt=' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '>' : $context['site']->name;
+		$context['site']->logo = get_theme_mod( 'yourhealth_logo' ) ? '<img src="' . esc_url( get_theme_mod( 'yourhealth_logo' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" class="page-header__logo">' : $context['site']->name;
 
 		return $context;
 	}
