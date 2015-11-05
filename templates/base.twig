@@ -52,7 +52,7 @@
 					{% if menu.get_items %}
 						<nav class="page-header__nav">
 							{% for item in menu.get_items %}
-								<a href="{{item.get_link}}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{item.title}}</a>
+								<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{item.title}}</a>
 							{% endfor %}
 						</nav>
 					{% endif %}
@@ -66,9 +66,9 @@
 
 					<div class="page-header__side-bottom">
 						<div class="page-header__search-block">
-							<input type="search" class="page-header__search"><input type="submit" class="page-header__search-submit">
+							<input type="search" class="page-header__search" placeholder="Search"><input type="submit" class="page-header__search-submit">
 						</div>
-						<div class="page-header__basket">0 item(s) - €0,00</div>
+						<button class="page-header__basket">0 item(s) - €0,00</button>
 					</div>
 				</div>
 			</div>

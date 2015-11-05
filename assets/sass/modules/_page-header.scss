@@ -6,7 +6,7 @@
     }
 
         &__main {
-
+            @include span(7 of 12);
         }
 
             &__logo-block {
@@ -45,35 +45,75 @@
                     }
                 }
 
-    &__side {
+        &__side {
+            @include clearfix;
+            @include span(5 of 12);
+            @include last;
 
-    }
-
-        &__contact-block {
-
+            padding-top: 55px;
         }
 
-            &__contact-item {
+            &__contact-block {
+                float: right;
+                padding: 10px 18px;
 
+                border: 1px solid color(gray, lighter);
+                background: color(gray, lightest);
             }
 
-        &__side-bottom {
+                &__contact-item {
+                    display: block;
 
-        }
+                    color: color(gray);
+                    text-decoration: none;
 
-            &__search-block {
+                    &:hover {
+                        color: color(gray, darker);
+                    }
+                }
 
+            &__side-bottom {
+                float: right;
+                margin-top: 50px;
             }
 
-            &__search {
+                &__search-block {
+                    display: inline-block;
+                }
 
+                    &__search {
+                        @include font-size(input);
+                        padding: 0 18px;
+                        margin-right: 1px;
+
+                        line-height: 31px;
+                        font-style: italic;
+                    }
+
+                    &__search-submit {
+                        height: 34px;
+                        margin-right: 8px;
+
+                        border: none;
+                        background: color(green, darker);
+
+                        &:hover {
+                            background: lighten(color(green, darker), 4%);
+                        }
+                    }
+
+            &__basket {
+                display: inline-block;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                color: color(white);
+                line-height: 29px;
+                border: none;
+                background: color(green, darker);
+
+                &:hover {
+                    background: lighten(color(green, darker), 4%);
+                }
             }
-
-            &__search-submit {
-
-            }
-
-        &__basket {
-
-        }
 }
