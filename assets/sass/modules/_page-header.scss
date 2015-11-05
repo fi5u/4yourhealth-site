@@ -23,7 +23,26 @@
             }
 
                 &__nav-item {
+                    @include font(title, 700);
+                    @include font-size(nav, main);
 
+                    margin-right: 38px;
+
+                    color: color(gray, darker);
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: lighten(color(gray, darker), 15%);
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &.current-menu-item {
+                        color: color(green, darker);
+                    }
                 }
 
     &__side {

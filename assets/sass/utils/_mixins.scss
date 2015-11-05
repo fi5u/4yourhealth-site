@@ -17,7 +17,6 @@
     @if $weight {
         font-weight: $weight;
     }
-
 }
 
 @mixin font-size($element, $context: base) {
