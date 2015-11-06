@@ -61,15 +61,29 @@
                 background: color(gray, lightest);
             }
 
-                &__contact-item {
+                [class^="page-header__contact-item"] {
                     display: block;
 
                     color: color(gray);
                     text-decoration: none;
 
+                    &:before {
+                        margin-right: 10px;
+
+                        color: color(green, darker);
+                    }
+
                     &:hover {
                         color: color(gray, darker);
                     }
+                }
+
+                &__contact-item--phone {
+                    @include icon(phone);
+                }
+
+                &__contact-item--email {
+                    @include icon(mail-alt);
                 }
 
             &__side-bottom {
@@ -83,17 +97,26 @@
 
                     &__search {
                         @include font-size(input);
+
                         padding: 0 18px;
                         margin-right: 1px;
 
                         line-height: 31px;
                         font-style: italic;
+
+                        &:focus {
+                            border: 2px solid color(green, darker);
+                            outline: none;
+                        }
                     }
 
                     &__search-submit {
+                        @include icon(search);
+
                         height: 34px;
                         margin-right: 8px;
 
+                        color: color(white);
                         border: none;
                         background: color(green, darker);
 
