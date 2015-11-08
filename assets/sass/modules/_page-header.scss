@@ -158,6 +158,9 @@
             }
 
                 &__basket-btn {
+                    @include font-size(button, bigger);
+                    @include icon(basket);
+
                     display: inline-block;
                     padding-left: 15px;
                     padding-right: 15px;
@@ -169,6 +172,10 @@
                     background: $c-key;
                     cursor: pointer;
                     outline: none;
+
+                    &:before {
+                        margin-right: 16px;
+                    }
 
                     &:hover,
                     .page-header__basket--open & {
