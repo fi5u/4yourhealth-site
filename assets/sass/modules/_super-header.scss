@@ -40,11 +40,24 @@ $h-super-header: 35px;
         }
 
             &__selector--lang {
-                min-width: 94px;
                 height: $h-super-header;
+
+                width: 32px;
+
+                @include breakpoint(midi) {
+                    width: auto;
+                    min-width: 96px;
+                }
 
                 & ~ .select2 {
                     @include font-size(select, super-header);
+
+                    width: 32px;
+
+                    @include breakpoint(midi) {
+                        width: auto;
+                        min-width: 96px;
+                    }
 
                     &.select2-container--focus * {
                         outline: none;
@@ -67,7 +80,7 @@ $h-super-header: 35px;
                                 top: -2px;
                                 width: 16px;
                                 height: 13px;
-                                margin-right: 6px;
+                                margin-right: 8px;
 
                                 content: "";
                                 vertical-align: middle;
@@ -107,16 +120,19 @@ $h-super-header: 35px;
 }
 
 .select2-results__option {
+    height: 26px;
     margin-bottom: 1px;
+    color: transparent;
     background-color: color(gray, lighter);
 
     &:before {
         display: inline-block;
         position: relative;
         top: -2px;
+        left: 2px;
         width: 16px;
         height: 13px;
-        margin-right: 6px;
+        margin-right: 10px;
 
         content: "";
         vertical-align: middle;
@@ -140,8 +156,19 @@ $h-super-header: 35px;
             background-size: 16px 13px;
         }
     }
+
+    @include breakpoint(midi) {
+        height: auto;
+        color: color(gray, darker);
+    }
 }
 
 .select2-results__option--highlighted {
-    background-color: color(green, darker) !important;
+    overflow: hidden;
+    color: $c-key !important;
+    background-color: $c-key !important;
+
+    @include breakpoint(midi) {
+        color: color(white) !important;
+    }
 }
