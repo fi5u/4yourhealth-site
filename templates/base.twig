@@ -33,6 +33,10 @@
 						</nav>
 					{% endif %}
 
+					<div class="super-header__search-block">
+						<input type="search" class="page-header__search" placeholder="Search"><button type="submit" class="page-header__search-submit"></button>
+					</div>
+
 					<div class="super-header__selectors">
 						<select name="user-language" id="select-super-header-lang" class="super-header__selector--lang">
 							<option value="/en/"{% if lang_current == 'en' %} selected{% endif %}>English</option>

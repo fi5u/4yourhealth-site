@@ -35,6 +35,26 @@ $h-super-header: 35px;
                 }
             }
 
+        &__search-block {
+            @extend .page-header__search-block;
+
+            margin: 0 10px;
+
+            @include breakpoint(midi) {
+                display: none;
+            }
+
+            .page-header__search {
+                position: relative;
+                top: -1px;
+                margin: 0;
+            }
+
+            .page-header__search-submit {
+                height: 37px;
+            }
+        }
+
         &__selectors {
             float: right;
         }

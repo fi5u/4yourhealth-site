@@ -114,8 +114,13 @@
                 }
 
             &__side-bottom {
+                display: none;
                 float: right;
                 margin-top: 42px;
+
+                @include breakpoint(midi) {
+                    display: block;
+                }
             }
 
                 &__search-block {
@@ -127,6 +132,7 @@
 
                         padding: 0 18px;
                         margin-right: 1px;
+                        margin-bottom: 2px;
 
                         line-height: 31px;
                         font-style: italic;
