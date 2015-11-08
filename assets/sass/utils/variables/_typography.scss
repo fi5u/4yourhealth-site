@@ -10,6 +10,10 @@ $font: (
     subtitle: (
         stack: "'PT Sans', sans-serif",
         weight: 400
+    ),
+    special: (
+        stack: "'Gudea', sans-serif",
+        weight: 400
     )
 );
 
@@ -19,6 +23,10 @@ $font-size: (
         tease: 16px,
         base: 15px,
     ),
+    title: (
+        basket-popup: 15px,
+        basket-popup-item: 16px,
+    ),
     nav: (
         main: 17px,
     ),
@@ -27,5 +35,12 @@ $font-size: (
     ),
     input: (
         base: 13px
+    ),
+    button: (
+        base: 13px
+    ),
+    list: (
+        basket-popup: 14px,
+        basket-item-qty: 16px,
     )
 );

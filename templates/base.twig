@@ -35,8 +35,8 @@
 
 					<div class="super-header__selectors">
 						<select name="user-language" id="select-super-header-lang" class="super-header__selector--lang">
-							<option value="finnish">Finnish</option>
-							<option value="english">English</option>
+							<option value="/en/"{% if lang_current == 'en' %} selected{% endif %}>English</option>
+							<option value="/fi/"{% if lang_current == 'fi' %} selected{% endif %}>Finnish</option>
 						</select>
 					</div>
 				</div>
@@ -68,7 +68,47 @@
 						<div class="page-header__search-block">
 							<input type="search" class="page-header__search" placeholder="Search"><button type="submit" class="page-header__search-submit"></button>
 						</div>
-						<button class="page-header__basket">0 item(s) - €0,00</button>
+						<div class="page-header__basket">
+							<button class="page-header__basket-btn">0 item(s) - €0,00</button>
+
+							<div class="page-header__basket-list">
+								<h5 class="page-header__basket-list-title">Recently added item(s)</h5>
+								<ul class="page-header__basket-list-group">
+									<li class="page-header__basket-item">
+										<button type="button" class="page-header__basket-item-delete">&times;</button>
+										<img src="http://placehold.it/85x85" alt="Product name" class="page-header__basket-item-img">
+										<div class="page-header__basket-item-text">
+											<h6 class="page-header__basket-item-title">Product 1</h6>
+											<div class="page-header__basket-item-detail">
+												<span class="page-header__basket-item-qty">1</span> &times; <span class="page-header__basket-item-price">710 €</span>
+											</div>
+										</div>
+									</li>
+									<li class="page-header__basket-item">
+										<button type="button" class="page-header__basket-item-delete">&times;</button>
+										<img src="http://placehold.it/85x85" alt="Product name" class="page-header__basket-item-img">
+										<div class="page-header__basket-item-text">
+											<h6 class="page-header__basket-item-title">Product 2</h6>
+											<div class="page-header__basket-item-detail">
+												<span class="page-header__basket-item-qty">2</span> &times; <span class="page-header__basket-item-price">7 €</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+
+								<div class="page-header__basket-footer">
+									<div class="page-header__basket-summary">
+										<div class="page-header__basket-summary-item">
+											Total: <span class="page-header__basket-summary-item-amount">736€</span>
+										</div>
+									</div>
+									<div class="page-header__basket-links">
+										<a href="/" class="page-header__basket-link">Cart</a><br>
+										<a href="/" class="page-header__basket-link">Checkout</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

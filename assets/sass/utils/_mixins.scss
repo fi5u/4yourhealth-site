@@ -20,7 +20,11 @@
 }
 
 @mixin font-size($element, $context: base) {
-    $rem-val: map-get(map-get($font-size, $element), $context);
+    @if type-of($element) != string {
+        $rem-val: $element;
+    } @else {
+        $rem-val: map-get(map-get($font-size, $element), $context);
+    }
     font-size: $rem-val;
     font-size: ($rem-val / 10) / 1px + rem;
 }

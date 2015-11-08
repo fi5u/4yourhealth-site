@@ -40,7 +40,7 @@ $h-super-header: 35px;
         }
 
             &__selector--lang {
-                min-width: 80px;
+                min-width: 94px;
                 height: $h-super-header;
 
                 & ~ .select2 {
@@ -60,6 +60,33 @@ $h-super-header: 35px;
                         .select2-selection__rendered {
                             line-height: $h-super-header;
                             color: color(white);
+
+                            &:before {
+                                display: inline-block;
+                                position: relative;
+                                top: -2px;
+                                width: 16px;
+                                height: 13px;
+                                margin-right: 6px;
+
+                                content: "";
+                                vertical-align: middle;
+                                outline: 1px solid #d8e7bd;
+                            }
+
+                            &[title="Finnish"] {
+                                &:before {
+                                    background: url(assets/images/flag-fi.png) no-repeat;
+                                    background-size: 16px 13px;
+                                }
+                            }
+
+                            &[title="English"] {
+                                &:before {
+                                    background: url(assets/images/flag-uk.jpg) no-repeat;
+                                    background-size: 16px 13px;
+                                }
+                            }
                         }
 
                         .select2-selection__arrow {
@@ -83,8 +110,35 @@ $h-super-header: 35px;
     margin-bottom: 1px;
     background-color: color(gray, lighter);
 
+    &:before {
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        width: 16px;
+        height: 13px;
+        margin-right: 6px;
+
+        content: "";
+        vertical-align: middle;
+        outline: 1px solid #d8e7bd;
+    }
+
     &[aria-selected="true"] {
         display: none;
+    }
+
+    &[id$="/fi/"] {
+        &:before {
+            background: url(assets/images/flag-fi.png) no-repeat;
+            background-size: 16px 13px;
+        }
+    }
+
+    &[id$="/en/"] {
+        &:before {
+            background: url(assets/images/flag-uk.jpg) no-repeat;
+            background-size: 16px 13px;
+        }
     }
 }
 

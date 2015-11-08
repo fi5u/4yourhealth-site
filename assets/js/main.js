@@ -12,11 +12,19 @@
             $('select').select2(select2Opts);
         }
 
+        $('.page-header__basket-btn').click(function() {
+            $('.page-header__basket').toggleClass('page-header__basket--open');
+        });
+
+        $('#select-super-header-lang').change(function() {
+            window.location = $('#select-super-header-lang').val();
+        });
+
         $(document).ready(function() {
 
         });
 
-        $(window).smartresize(function(){
+        $(window).smartresize(function() {
 
         });
     }

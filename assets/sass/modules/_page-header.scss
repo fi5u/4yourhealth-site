@@ -1,5 +1,27 @@
 .page-header {
-    border-top: 4px solid color(green, darker);
+    position: relative;
+    padding-bottom: 25px;
+
+    background-color: color(white);
+    border-top: 4px solid $c-key;
+    box-shadow: 0 -1px 3px 1px rgba(0,0,0,0.2);
+
+    &:after {
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        left: 0;
+        z-index: -1;
+        max-width: 1400px;
+        height: 6px;
+        margin: 0 auto;
+
+        border-radius: 50%;
+        background-color: rgba(200,200,200,0.2);
+        box-shadow: 0 -1px 5px 1px rgba(0,0,0,0.1);
+
+        content: "";
+    }
 
     &__inner {
         @extend %layout-inner;
@@ -41,7 +63,7 @@
                     }
 
                     &.current-menu-item {
-                        color: color(green, darker);
+                        color: $c-key;
                     }
                 }
 
@@ -50,7 +72,7 @@
             @include span(5 of 12);
             @include last;
 
-            padding-top: 55px;
+            padding-top: 42px;
         }
 
             &__contact-block {
@@ -63,6 +85,7 @@
 
                 [class^="page-header__contact-item"] {
                     display: block;
+                    margin-bottom: 5px;
 
                     color: color(gray);
                     text-decoration: none;
@@ -70,7 +93,11 @@
                     &:before {
                         margin-right: 10px;
 
-                        color: color(green, darker);
+                        color: $c-key;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
                     }
 
                     &:hover {
@@ -88,7 +115,7 @@
 
             &__side-bottom {
                 float: right;
-                margin-top: 50px;
+                margin-top: 42px;
             }
 
                 &__search-block {
@@ -105,7 +132,7 @@
                         font-style: italic;
 
                         &:focus {
-                            border: 2px solid color(green, darker);
+                            border: 2px solid $c-key;
                             outline: none;
                         }
                     }
@@ -118,25 +145,166 @@
 
                         color: color(white);
                         border: none;
-                        background: color(green, darker);
+                        background: $c-key;
 
                         &:hover {
-                            background: lighten(color(green, darker), 4%);
+                            background: $c-key-hl;
                         }
                     }
 
             &__basket {
-                display: inline-block;
-                padding-left: 15px;
-                padding-right: 15px;
-
-                color: color(white);
-                line-height: 29px;
-                border: none;
-                background: color(green, darker);
-
-                &:hover {
-                    background: lighten(color(green, darker), 4%);
-                }
+                display: inline;
+                position: relative;
             }
+
+                &__basket-btn {
+                    display: inline-block;
+                    padding-left: 15px;
+                    padding-right: 15px;
+
+                    color: color(white);
+                    line-height: 28px;
+                    border: none;
+                    border-top: 1px solid $c-key;
+                    background: $c-key;
+                    cursor: pointer;
+                    outline: none;
+
+                    &:hover,
+                    .page-header__basket--open & {
+                        background: $c-key-hl;
+                    }
+
+                    .page-header__basket--open & {
+                        border-top: 1px solid $c-key-hl-extra;
+                    }
+                }
+
+                &__basket-list {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    top: calc(100% + 20px);
+                    right: 0;
+                    min-width: 300px;
+                    padding: 22px 20px;
+
+                    border-top: 3px solid $c-key-hl;
+                    background-color: color(white);
+                    box-shadow: 0 2px 3px 1px rgba(0,0,0,0.1);
+
+                    .page-header__basket--open & {
+                        display: block;
+                    }
+                }
+
+                    &__basket-list-title {
+                        @include font-size(title, basket-popup);
+
+                        margin: 0;
+
+                        font-weight: normal;
+                    }
+
+                    &__basket-list-group {
+                        padding: 0;
+                        list-style-type: none;
+                    }
+
+                        &__basket-item {
+                            @include clearfix;
+
+                            position: relative;
+                            margin-bottom: 20px;
+                        }
+
+                            &__basket-item-delete {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+
+                                font-size: 20px;
+                                border: none;
+                                background: none;
+
+                                &:hover {
+                                    color: color(gray);
+                                }
+                            }
+
+                            &__basket-item-img {
+                                float: left;
+                                margin-right: 15px;
+                            }
+
+                            &__basket-item-text {
+                                float: left;
+                            }
+
+                                &__basket-item-title {
+                                    @include font(title, 700);
+                                    @include font-size(title, basket-popup-item);
+
+                                    margin: 0;
+                                }
+
+                                &__basket-item-detail {
+                                    @include font-size(list, basket-popup);
+                                    margin-top: 30px;
+
+                                    color: color(gray);
+                                }
+
+                                    &__basket-item-qty,
+                                    &__basket-item-price {
+                                        @include font-size(list, basket-item-qty);
+                                    }
+
+                                    &__basket-item-qty {
+
+                                    }
+
+                                    &__basket-item-price {
+                                        @include font(special, 700);
+
+                                        color: color(green, lighter);
+                                    }
+
+                    &__basket-footer {
+                        @include clearfix;
+                    }
+
+                        &__basket-summary {
+                            float: left;
+                        }
+
+                            &__basket-summary-item {
+                                @include font(title, 700);
+                                @include font-size(15px);
+
+                                text-transform: uppercase;
+                            }
+
+                                &__basket-summary-item-amount {
+                                    @include font(special, 700);
+                                    @include font-size(18px);
+
+                                    color: color(green);
+                                }
+
+                        &__basket-links {
+                            float: right;
+                            width: 100px;
+                            margin-right: 30px;
+                        }
+
+                            &__basket-link {
+                                @extend %btn;
+
+                                margin-bottom: 4px;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
 }

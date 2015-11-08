@@ -1,0 +1,25 @@
+%btn {
+    @include font-size(button);
+
+    display: inline-block;
+    padding: 10px 20px;
+
+    color: color(gray, lightest);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: color(gray, dark);
+    border-top: 1px solid lighten(color(gray, dark), 15%);
+    border-radius: 3px;
+
+    &:hover,
+    &:focus {
+        background-color: $c-key;
+        border-top-color: $c-key-hl;
+    }
+
+    &:active {
+        background-color: $c-key-hl-extra;
+        border-top-color: $c-key-hl-extra;
+    }
+}

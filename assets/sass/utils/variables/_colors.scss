@@ -9,6 +9,7 @@ $colors: (
         lightest:   #f5f5f5,
         lighter:    #e2e2e2,
         base:       #7f7d74,
+        dark:       #575a59,
         darker:     #444645,
     ),
     green: (
@@ -17,3 +18,7 @@ $colors: (
         darker:     #7bae23,
     )
 );
+
+$c-key: color(green, darker);
+$c-key-hl: lighten($c-key, 4%);
+$c-key-hl-extra: lighten($c-key, 10%);
