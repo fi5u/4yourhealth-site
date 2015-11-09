@@ -14,16 +14,48 @@ $h-super-header: 35px;
         }
 
             &__item {
+                //float: left;
+                display: inline-block;
                 margin-right: 32px;
+
                 color: color(gray);
                 text-decoration: none;
+                white-space: nowrap;
 
                 &--cart {
                     @include icon(basket);
+
+                    width: 20px;
+
+                    color: transparent;
+
+                    &:before {
+                        color: color(gray);
+                    }
+
+                    &:hover {
+                        color: transparent !important;
+                    }
+
+                    @include breakpoint(midi) {
+                        width: auto;
+
+                        color: color(gray);
+
+                        &:hover {
+                            color: darken(color(gray), 10%) !important;
+                        }
+                    }
                 }
 
                 &--checkout {
                     @include icon(ok);
+
+                    display: none;
+
+                    @include breakpoint(midi) {
+                        display: inline-block;
+                    }
                 }
 
                 &:hover {
@@ -38,6 +70,7 @@ $h-super-header: 35px;
         &__search-block {
             @extend .page-header__search-block;
 
+            float: right;
             margin: 0 10px;
 
             @include breakpoint(midi) {

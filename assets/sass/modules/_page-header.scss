@@ -28,7 +28,9 @@
     }
 
         &__main {
-            @include span(7 of 12);
+            @include breakpoint(midi) {
+                @include span(7 of 12);
+            }
         }
 
             &__logo-block {
@@ -69,22 +71,36 @@
 
         &__side {
             @include clearfix;
-            @include span(5 of 12);
-            @include last;
 
-            padding-top: 42px;
+            padding-top: 16px;
+
+            text-align: center;
+
+            @include breakpoint(midi) {
+                @include span(5 of 12);
+                @include last;
+
+                padding-top: 42px;
+
+                text-align: left;
+            }
         }
 
             &__contact-block {
-                float: right;
+                float: none;
                 padding: 10px 18px;
 
                 border: 1px solid color(gray, lighter);
                 background: color(gray, lightest);
+
+                @include breakpoint(midi) {
+                    float: right;
+                }
             }
 
                 [class^="page-header__contact-item"] {
-                    display: block;
+                    display: inline-block;
+                    margin-right: 16px;
                     margin-bottom: 5px;
 
                     color: color(gray);
@@ -97,11 +113,16 @@
                     }
 
                     &:last-child {
+                        margin-right: 0;
                         margin-bottom: 0;
                     }
 
                     &:hover {
                         color: color(gray, darker);
+                    }
+
+                    @include breakpoint(midi) {
+                        display: block;
                     }
                 }
 
@@ -117,6 +138,8 @@
                 display: none;
                 float: right;
                 margin-top: 42px;
+
+                text-align: right;
 
                 @include breakpoint(midi) {
                     display: block;
@@ -147,7 +170,6 @@
                         @include icon(search);
 
                         height: 34px;
-                        margin-right: 8px;
 
                         color: color(white);
                         border: none;
@@ -161,6 +183,9 @@
             &__basket {
                 display: inline;
                 position: relative;
+                margin-left: 8px;
+
+                text-align: left;
             }
 
                 &__basket-btn {
