@@ -1,0 +1,17 @@
+.bx-wrapper .bx-viewport {
+    left: 0;
+
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent;
+    border-top: none;
+    border-bottom: none;
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 20px;
+}
+
+.bxslider {
+    top: -15px;
+}

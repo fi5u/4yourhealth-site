@@ -30,7 +30,11 @@
 }
 
 @mixin line-height($element, $context: base) {
-    $rem-val: map-get(map-get($font-size, $element), $context);
+    @if type-of($element) != string {
+        $rem-val: $element;
+    } @else {
+        $rem-val: map-get(map-get($font-size, $element), $context);
+    }
     line-height: $rem-val;
     line-height: ($rem-val / 10) / 1px + rem;
 }

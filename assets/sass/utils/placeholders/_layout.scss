@@ -1,10 +1,10 @@
 %layout-inner {
     @include container;
 
-    padding: 0 $page-pad-sm;
+    padding: 0;
 
-    @include breakpoint(nav-break) {
-        padding: 0 $page-pad;
+    @include breakpoint(midi) {
+        padding: 0 20px;
     }
 
     @include breakpoint(full) {

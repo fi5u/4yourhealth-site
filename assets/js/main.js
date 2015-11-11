@@ -21,7 +21,11 @@
         });
 
         $(document).ready(function() {
-
+            $('.bxslider').bxSlider({
+                auto: true,
+                autoHover: true,
+                controls: false
+            });
         });
 
         $(window).smartresize(function() {

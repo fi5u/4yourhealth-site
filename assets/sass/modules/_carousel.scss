@@ -1,0 +1,71 @@
+.carousel {
+    background: linear-gradient(rgba(255,255,255, 0), rgba(255,255,255, 1)), url("assets/images/pattern-tile.jpg") repeat center;
+
+    &__inner {
+        @extend %layout-inner;
+    }
+
+        &__content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+            &__text {
+                position: absolute;
+                left: 40%;
+                top: 39%;
+            }
+
+                &__title {
+                    @extend %title;
+                    @include font-size(title, carousel);
+
+                    margin-bottom: 0px;
+
+                    text-transform: uppercase;
+                    font-weight: normal;
+                }
+
+                &__subtext {
+                    @include font(special);
+                    @include font-size(28px);
+                    @include line-height(30px);
+
+                    margin-bottom: 20px;
+
+                    color: color(gray);
+                }
+
+                &__link {
+                    @extend %btn;
+                }
+
+            &__price-badge {
+                @include font(special);
+                @include font-size(30px);
+
+                position: absolute;
+                top: 22%;
+                left: 18%;
+                width: 150px;
+                height: 150px;
+
+                text-align: center;
+                line-height: 150px;
+                color: color(white);
+                background-color: color(green, lighter);
+                border-radius: 50%;
+            }
+
+        &__img {
+
+        }
+
+        &__bg {
+            &--front {
+
+            }
+
+        }
+}

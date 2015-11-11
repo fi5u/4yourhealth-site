@@ -17,13 +17,15 @@ if ( ! class_exists( 'Wp_Enqueue_Scripts') ) :
             // VENDOR SCRIPTS
             wp_enqueue_script( 'select2',  get_stylesheet_directory_uri() . '/node_modules/select2/dist/js/select2.js', array( 'jquery' ), '03112015', false );
             wp_enqueue_script( 'smart-resize',  get_stylesheet_directory_uri() . '/assets/js/vendor/jquery.smartresize.js', array( 'jquery' ), '03112015', true );
+            wp_enqueue_script( 'bxslider',  get_stylesheet_directory_uri() . '/assets/js/vendor/jquery.bxslider.js', array( 'jquery' ), '10112015', true );
 
 
             // CUSTOM SCRIPTS
             $main_dependencies = array(
                 'jquery',
                 'select2',
-                'smart-resize'
+                'smart-resize',
+                'bxslider'
             );
             wp_enqueue_script( 'main',  get_stylesheet_directory_uri() . '/assets/js/main.js', $main_dependencies, '03112015', true );
 
