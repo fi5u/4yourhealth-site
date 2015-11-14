@@ -34,3 +34,10 @@
         content: "";
     }
 }
+
+%section-subtitle {
+    @include font(title);
+    @include font-size(subtitle, section);
+
+    color: color(gray);
+}
