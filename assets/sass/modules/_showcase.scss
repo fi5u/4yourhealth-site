@@ -1,4 +1,23 @@
 .showcase {
+    &__title {
+        @extend %section-title;
+    }
+
+    &__subtitle {
+
+    }
+
+    &__filter-bar {
+
+    }
+
+        &__filter {
+
+            &--is-selected {
+
+            }
+        }
+
     &__grid {
         @include clearfix;
     }

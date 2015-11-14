@@ -2,3 +2,35 @@
     @include font(title);
     margin: 0;
 }
+
+%section-title {
+    @extend %title;
+    @include font-size(title, section);
+
+    position: relative;
+    padding-left: 12px;
+
+    &:before {
+        position: absolute;
+        bottom: -5px;
+        left: -15px;
+        z-index: -1;
+        width: 196px;
+        height: 117px;
+
+        background: url(assets/images/title-splash.png) no-repeat center;
+        content: "";
+    }
+
+    &:after {
+        position: absolute;
+        z-index: 1;
+        bottom: 12px;
+        left: 0;
+        width: 5px;
+        height: 37px;
+
+        background: color(green, darker);
+        content: "";
+    }
+}
