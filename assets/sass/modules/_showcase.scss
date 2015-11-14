@@ -8,13 +8,33 @@
     }
 
     &__filter-bar {
-
+        margin: 20px 0 15px;
     }
 
         &__filter {
+            @include font(title);
+            @include font-size(14px);
+
+            display: inline-block;
+            padding: 6px 24px;
+            margin-bottom: 5px;
+
+            color: color(white);
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+            background: color(gray, darker);
+
+            &:hover {
+                background-color: color(gray)
+            }
 
             &--is-selected {
+                background-color: color(green);
 
+                &:hover {
+                    background-color: color(green);
+                }
             }
         }
 
