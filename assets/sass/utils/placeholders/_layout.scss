@@ -1,13 +1,9 @@
 %layout-inner {
     @include container;
 
-    padding: 0;
+    padding: 0 10px;
 
     @include breakpoint(midi) {
-        padding: 0 20px;
-    }
-
-    @include breakpoint(full) {
         padding: 0;
     }
 }

@@ -3,6 +3,8 @@
 
     &__inner {
         @extend %layout-inner;
+
+        padding: 0;
     }
 
         &__content {
