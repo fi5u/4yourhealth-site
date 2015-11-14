@@ -3,7 +3,7 @@
 
     padding: 0 10px;
 
-    @include breakpoint(midi) {
+    @include breakpoint(full) {
         padding: 0;
     }
 }

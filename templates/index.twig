@@ -1,11 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content_full %}
-    {% include 'modules/_carousel.twig' %}
 {% endblock %}
 
 {% block content %}
-    {% include 'modules/_showcase.twig' %}
     {% for post in posts %}
         {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
     {% endfor %}

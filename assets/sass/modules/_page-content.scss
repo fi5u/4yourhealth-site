@@ -11,6 +11,14 @@
             }
         }
 
+            &__title {
+                @extend %section-title;
+            }
+
+            &__content {
+                @include line-height(21px);
+            }
+
         &__sidebar {
             @include breakpoint(mini) {
                 @include span(3 of 12);

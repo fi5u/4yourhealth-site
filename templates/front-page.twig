@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content_full %}
+    {% include 'modules/_carousel.twig' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'modules/_showcase.twig' %}
+
+    <h2 class="page-content__title">{{ post.post_title }}</h2>
+    <div class="page-content__content">
+        {{ post.content }}
+    </div>
+
+
+{% endblock %}
