@@ -21,10 +21,20 @@
         });
 
         $(document).ready(function() {
-            $('.bxslider').bxSlider({
+            $('#carousel-hero').bxSlider({
                 auto: true,
                 autoHover: true,
-                controls: false
+                controls: false,
+                nextText: '>',
+                prevText: '<'
+            });
+
+            $('#carousel-product').bxSlider({
+                auto: false,
+                pager: false,
+                controls: true,
+                nextText: '>',
+                prevText: '<'
             });
         });
 

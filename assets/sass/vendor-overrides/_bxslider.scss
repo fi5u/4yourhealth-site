@@ -6,6 +6,10 @@
     border-color: transparent;
     border-top: none;
     border-bottom: none;
+
+    .product-carousel & {
+        margin-top: 20px;
+    }
 }
 
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
@@ -14,4 +18,58 @@
 
 .bxslider {
     top: -15px;
+
+    .product-carousel & {
+        top: 0;
+    }
+}
+
+.bx-controls-direction {
+    .carousel & {
+        display: none;
+    }
+
+    .product-carousel & {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.bx-pager {
+    .product-carousel & {
+        display: none;
+    }
+}
+
+.bx-prev,
+.bx-next {
+    @include font(special);
+
+    display: inline-block;
+    width: 60px !important;
+    height: 40px !important;
+
+    color: color(gray, dark);
+    font-size: 30px;
+    text-indent: 0 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    line-height: 35px;
+    background: none !important;
+    background-color: color(gray, lightest) !important;
+    border: 1px solid color(gray, lighter);
+    border-radius: 3px;
+
+    &:hover {
+        background-color: color(gray, lighter) !important;
+    }
+}
+
+.bx-next {
+    right: 0 !important;
+}
+
+.bx-prev {
+    left: -122px !important;
 }

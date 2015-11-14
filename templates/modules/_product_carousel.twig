@@ -1,0 +1,23 @@
+<div class="product-carousel">
+    {% if title %}
+        <h2 class="product-carousel__title">{{ title }}</h2>
+
+        {% if subtitle %}
+            <p class="product-carousel__subtitle">{{ subtitle }}</p>
+        {% endif %}
+    {% endif %}
+    <div class="product-carousel__inner">
+        <ul class="bxslider" id="carousel-product">
+            <li>
+                {% include 'modules/_card.twig' %}
+                {% include 'modules/_card.twig' %}
+                {% include 'modules/_card.twig' %}
+            </li>
+            <li>
+                {% include 'modules/_card.twig' %}
+                {% include 'modules/_card.twig' %}
+                {% include 'modules/_card.twig' %}
+            </li>
+        </ul>
+    </div>
+</div>

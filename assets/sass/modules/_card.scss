@@ -79,6 +79,7 @@
         &__title {
             @include font(title);
             @include font-size(title, card);
+            @include hyphens(auto);
 
             color: color(gray);
             font-weight: normal;

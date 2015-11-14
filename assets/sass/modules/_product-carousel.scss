@@ -1,0 +1,9 @@
+.product-carousel {
+    &__title {
+        @extend %section-title;
+    }
+
+    &__subtitle {
+        @extend %section-subtitle;
+    }
+}
