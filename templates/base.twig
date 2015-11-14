@@ -118,8 +118,9 @@
 			</div>
 		</header>
 
-		<main id="content" role="main" class="page-content">
-			{% block content_full %}
+		<main id="content" role="main" class="page-content{% if sidebar %} page-content--has-sidebar{% else %} page-content--not-has-sidebar{% endif %}">
+			{% block content_full %}{% endblock %}
+			<div class="page-content__inner">
 				<div class="page-content__main {{sidebar_class}}">
 					{% block content %}
 						Sorry, no content
@@ -127,10 +128,10 @@
 				</div>
 				{% if sidebar %}
 					<aside class="page-content__sidebar">
-						{{sidebar}}
+						{{ sidebar }}
 					</aside>
 				{% endif %}
-			{% endblock %}
+			</div>
 		</main>
 
 		<footer class="page-footer">

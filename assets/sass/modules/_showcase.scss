@@ -1,0 +1,5 @@
+.showcase {
+    &__grid {
+        @include clearfix;
+    }
+}

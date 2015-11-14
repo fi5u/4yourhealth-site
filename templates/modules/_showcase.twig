@@ -1,0 +1,21 @@
+<section class="showcase">
+    <h2 class="showcase__title">Our products</h2>
+    <p class="showcase__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsam nostrum debitis ea perferendis non optio soluta voluptates minus, ratione provident beatae eum asperiores aspernatur autem voluptas, maiores deserunt, fugiat.</p>
+
+    <div class="showcase__filter-bar">
+        <a href="#" class="showcase__filter showcase__filter--is-selected" data-value="all">All</a>
+        <a href="#" class="showcase__filter" data-value="latest">Latest</a>
+        <a href="#" class="showcase__filter" data-value="featured">Featured</a>
+        <a href="#" class="showcase__filter" data-value="bestsellers">Bestsellers</a>
+        <a href="#" class="showcase__filter" data-value="special">Special</a>
+    </div>
+
+    <div class="showcase__grid">
+        {% include 'modules/_card.twig' %}
+        {% include 'modules/_card.twig' %}
+        {% include 'modules/_card.twig' with {'old_price': '434,99 €'} only %}
+        {% include 'modules/_card.twig' %}
+        {% include 'modules/_card.twig' with {'percent': '-25%'} only %}
+        {% include 'modules/_card.twig' %}
+    </div>
+</section>

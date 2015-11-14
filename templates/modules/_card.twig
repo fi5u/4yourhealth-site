@@ -1,0 +1,16 @@
+<article class="card">
+    <a href="#" class="card__img-link">
+        {% if percent %}
+            <div class="card__badge">
+                {{ percent }}
+            </div>
+        {% endif %}
+        <img src="http://placehold.it/228" alt="Product name" class="card__img">
+    </a>
+    <a href="#" class="card__title-link"><h3 class="card__title">Strauss T7 vesiautomaatti</h3></a><br>
+    <button class="card__btn">Add to cart</button>
+    <div class="card__price-wrap">
+        <div class="card__price">{% if old_price %}<span class="card__price--old">{{ old_price }}</span><br>{% endif %}
+        242 €</div>
+    </div>
+</article>

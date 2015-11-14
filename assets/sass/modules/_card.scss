@@ -1,0 +1,143 @@
+.card {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    border: 1px solid transparent;
+
+    &:hover {
+        border-color: color(gray, lighter);
+    }
+
+    @include breakpoint(micro) {
+        @include span(6 of 12);
+
+        &:nth-child(2n) {
+            @include last;
+        }
+    }
+
+    .page-content--has-sidebar & {
+        @include breakpoint(mini) {
+            @include span(3 of 9);
+
+            &:nth-child(2n) {
+                float: left;
+            }
+
+            &:nth-child(3n) {
+                @include last;
+            }
+        }
+    }
+
+    .page-content--not-has-sidebar & {
+        @include breakpoint(mini) {
+            @include span(3 of 12);
+
+            &:nth-child(2n) {
+                float: left;
+            }
+
+            &:nth-child(4n) {
+                @include last;
+            }
+        }
+    }
+
+    &__img-link {
+        display: block;
+        position: relative;
+    }
+
+        &__badge {
+            @include font(title);
+
+            display: inline-block;
+            position: absolute;
+            top: 5%;
+            padding: 6px 10px;
+
+            color: color(white);
+            font-weight: 700;
+            background: color(red);
+        }
+
+        &__img {
+
+        }
+
+    &__title-link {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+
+        text-decoration: none;
+    }
+
+        &__title {
+            @include font(title);
+            @include font-size(title, card);
+
+            color: color(gray);
+            font-weight: normal;
+
+            .card:hover & {
+                color: color(gray, darker);
+            }
+        }
+
+    &__btn {
+        @extend %btn;
+    }
+
+    &__price-wrap {
+        @include font(special);
+        @include font-size(18px);
+
+        display: table;
+        position: absolute;
+        top: 28%;
+        right: -40px;
+        width: 195px;
+        height: 197px;
+        z-index: 0;
+
+        color: color(white);
+        font-weight: 700;
+        background: url(assets/images/price-splash-fade-btm.png) no-repeat;
+        background-size: contain;
+
+        @include breakpoint(mini) {
+            @include font-size(14px);
+
+            top: 15%;
+            width: 120px;
+            height: 120px;
+        }
+
+        @include breakpoint(midi) {
+            top: 30%;
+        }
+
+        @include breakpoint(maxi) {
+            @include font-size(18px);
+
+            top: 28%;
+            width: 195px;
+            height: 197px;
+        }
+    }
+
+        &__price {
+            display: table-cell;
+            padding-bottom: 5px;
+            vertical-align: middle;
+
+            &--old {
+                color: color(gray, dark);
+                text-decoration: line-through;
+            }
+        }
+}

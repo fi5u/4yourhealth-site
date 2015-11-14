@@ -1,13 +1,12 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block content_full %}
     {% include 'modules/_carousel.twig' %}
+{% endblock %}
 
-    <div class="page-content__inner">
-        <h2>{{foo}}</h2>
-        <p>{{qux}}</p>
-        {% for post in posts %}
-            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        {% endfor %}
-    </div>
+{% block content %}
+    {% include 'modules/_showcase.twig' %}
+    {% for post in posts %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
 {% endblock %}
