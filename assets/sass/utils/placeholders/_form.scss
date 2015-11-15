@@ -24,3 +24,13 @@
         border-top-color: $c-key-hl-extra;
     }
 }
+
+%input {
+    @include font-size(input, lg);
+
+    max-width: 100%;
+    padding: 4px 6px;
+    background-color: color(gray, lightest);
+    border: 1px solid color(gray, lighter);
+    border-radius: 3px;
+}

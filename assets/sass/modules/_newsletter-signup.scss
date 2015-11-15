@@ -1,0 +1,26 @@
+.newsletter-signup {
+    padding: 22px;
+
+    text-align: center;
+    background: color(white) url(assets/images/heart-splash-sm.png) no-repeat center 20px;
+    border: 1px solid color(gray, lighter);
+    border-radius: 3px;
+
+    &__title {
+        @include font(title);
+        @include font-size(title, newsletter-signup);
+
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        @extend %input;
+
+        margin-bottom: 20px;
+    }
+
+    &__submit {
+        @extend %btn;
+    }
+}
