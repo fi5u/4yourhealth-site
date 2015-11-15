@@ -1,6 +1,10 @@
 .page-content {
     &__inner {
         @extend %layout-inner;
+
+        padding-top: 56px;
+
+        background: url(assets/images/water-bg.png) no-repeat top right;
     }
 
         &__main {
