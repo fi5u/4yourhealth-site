@@ -37,6 +37,8 @@
 }
 
 .bx-pager {
+    padding-top: 0 !important;
+
     .product-carousel & {
         display: none;
     }
