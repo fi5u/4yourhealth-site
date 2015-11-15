@@ -9,7 +9,7 @@
 
         &__main {
             .page-content--has-sidebar & {
-                @include breakpoint(mini) {
+                @include breakpoint($bp-sidebar-break) {
                     @include span(9 of 12);
                 }
             }
@@ -26,7 +26,7 @@
             }
 
         &__sidebar {
-            @include breakpoint(mini) {
+            @include breakpoint($bp-sidebar-break) {
                 @include span(3 of 12);
                 @include last;
             }
