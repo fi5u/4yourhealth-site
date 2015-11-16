@@ -1,4 +1,6 @@
 .newsletter-signup {
+    @extend %widget;
+
     padding: 22px;
 
     text-align: center;

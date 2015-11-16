@@ -1,0 +1,110 @@
+.testimonials {
+    @extend %widget;
+
+    &__title {
+        @extend %title;
+        @include font-size(title, widget);
+
+        text-transform: uppercase;
+    }
+
+    &__carousel {
+
+    }
+
+        &__slide {
+
+        }
+
+            &__bubble {
+                position: relative;
+                padding: 30px 48px;
+                margin-bottom: 26px;
+
+                background-color: color(gray, lightest);
+                border: 1px solid color(gray, lighter);
+                border-radius: 3px;
+
+                &:before,
+                &:after {
+                    display: block;
+                    position: absolute;
+                    width: 0;
+
+                    content: "";
+                    border-style: solid;
+                }
+
+                &:before {
+                    bottom: -15px;
+                    left: 45px;
+
+                    content: "";
+                    border-width: 15px 15px 0;
+                    border-color: color(gray, lighter) transparent;
+                }
+
+                &:after {
+                    bottom: -13px;
+                    left: 47px;
+
+                    border-width: 13px 13px 0;
+                    border-color: color(gray, lightest) transparent;
+                }
+            }
+
+                &__testimonial-title {
+                    @extend %title;
+                    @include font-size(title, testimonial);
+
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        top: 18px;
+                        left: -46px;
+                        margin-right: 0.25em;
+
+                        color: color(gray);
+                        font-size: 3em;
+                        line-height: 0.1em;
+                        font-style: italic;
+                        vertical-align: -0.4em;
+                        content: "\"";
+                    }
+                }
+
+            &__side {
+                @include clearfix;
+
+                height: 85px;
+            }
+
+                &__avatar {
+                    float: left;
+                }
+
+                    &__avatar-img {
+
+                    }
+
+                &__details {
+                    float: left;
+                    margin-left: 10px;
+                }
+
+                    &__name {
+                        @include font(title);
+
+                        font-style: italic;
+                        font-weight: 700;
+                        color: color(green);
+                    }
+
+                    &__date {
+                        @include font-size(14px);
+
+                        color: color(gray);
+                        font-style: italic;
+                    }
+}
