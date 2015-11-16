@@ -5,6 +5,7 @@
         @extend %title;
         @include font-size(title, widget);
 
+        margin-bottom: 12px;
         text-transform: uppercase;
     }
 
