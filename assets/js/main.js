@@ -47,6 +47,17 @@
                 minSlides: 1,
                 maxSlides: 1,
             });
+
+            $('#carousel-news').bxSlider({
+                auto: true,
+                autoHover: true,
+                pager: false,
+                controls: true,
+                nextText: '>',
+                prevText: '<',
+                minSlides: 1,
+                maxSlides: 1,
+            });
         });
 
         $(window).smartresize(function() {

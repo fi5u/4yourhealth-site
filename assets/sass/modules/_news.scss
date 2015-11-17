@@ -1,0 +1,63 @@
+.news {
+    @extend %widget;
+
+    &__title {
+        @extend %title;
+        @include font-size(title, widget);
+
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    &__carousel {
+
+    }
+
+        &__slide {
+
+        }
+
+            &__item {
+                & + .news__item {
+                    margin-top: 30px;
+                }
+            }
+
+                &__img {
+                    margin-bottom: 20px;
+                }
+
+                &__item-title {
+                    @extend %title;
+                    @include font-size(title, widget-sub-item);
+
+                    margin-bottom: 20px;
+
+                    line-height: 1.2;
+                }
+
+                &__teaser {
+
+                }
+
+                &__footer {
+                    padding-bottom: 15px;
+                }
+
+                    &__read-more {
+                        font-weight: bold;
+                        color: color(green);
+                        text-decoration: none;
+
+                        &:hover {
+                            color: color(green, darker);
+                        }
+                    }
+
+                    &__pub-date {
+                        float: right;
+
+                        color: color(gray);
+                        font-style: italic;
+                    }
+}
