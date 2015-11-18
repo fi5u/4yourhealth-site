@@ -1,0 +1,13 @@
+.page-footer {
+    margin-top: 200px;
+
+    &__bottom {
+        border-top: 1px solid color(black);
+    }
+
+        &__bottom-inner {
+            @extend %layout-inner;
+
+            padding: 30px 0;
+        }
+}

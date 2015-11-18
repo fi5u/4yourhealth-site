@@ -135,7 +135,11 @@
 		</main>
 
 		<footer class="page-footer">
-			<small class="page-footer__small">&copy; {{"now"|date('Y')}}</small>
+			<div class="page-footer__bottom">
+				<div class="page-footer__bottom-inner">
+					<small class="page-footer__small">4YourHealth &copy; {{"now"|date('Y')}}</small>
+				</div>
+			</div>
 		</footer>
 		{{ function('wp_footer') }}
 	</body>

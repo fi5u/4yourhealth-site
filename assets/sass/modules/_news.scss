@@ -27,14 +27,23 @@
                     margin-bottom: 20px;
                 }
 
-                &__item-title {
-                    @extend %title;
-                    @include font-size(title, widget-sub-item);
-
-                    margin-bottom: 20px;
-
-                    line-height: 1.2;
+                &__item-title-link {
+                    text-decoration: none;
+                    color: color(gray, darker);
                 }
+
+                    &__item-title {
+                        @extend %title;
+                        @include font-size(title, widget-sub-item);
+
+                        margin-bottom: 20px;
+
+                        line-height: 1.2;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
 
                 &__teaser {
 

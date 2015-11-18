@@ -49,7 +49,7 @@
             });
 
             $('#carousel-news').bxSlider({
-                auto: true,
+                auto: false,
                 autoHover: true,
                 pager: false,
                 controls: true,
