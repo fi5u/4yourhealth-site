@@ -43,31 +43,62 @@
                 }
 
             &__nav {
-
+                position: relative;
+                z-index: 1;
             }
 
-                &__nav-item {
-                    @include font(title, 700);
-                    @include font-size(nav, main);
-
-                    margin-right: 38px;
-
-                    color: color(gray, darker);
-                    text-transform: uppercase;
-                    text-decoration: none;
-
-                    &:hover {
-                        color: lighten(color(gray, darker), 15%);
-                    }
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
-
-                    &.current-menu-item {
-                        color: $c-key;
-                    }
+                &__nav-items {
+                    display: inline-block;
+                    position: relative;
                 }
+
+                    &__nav-children {
+                        display: none;
+                        position: absolute;
+                        top: 22px;
+                        left: 0;
+                        padding: 20px 10px;
+
+                        background: transparentize(color(gray, dark), .1);
+
+                        &:hover,
+                        .page-header__nav-items:hover & {
+                            display: inline-block;
+
+                            transform: translateY(0);
+                        }
+                    }
+
+                    &__nav-item {
+                        @include font(title, 700);
+                        @include font-size(nav, main);
+
+                        display: inline-block;
+                        position: relative;
+                        margin-right: 38px;
+
+                        color: color(gray, darker);
+                        text-transform: uppercase;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: lighten(color(gray, darker), 15%);
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.current-menu-item {
+                            color: $c-key;
+                        }
+
+                        &--child {
+                            color: color(white);
+                            line-height: 30px;
+                            white-space: nowrap;
+                        }
+                    }
 
         &__side {
             @include clearfix;

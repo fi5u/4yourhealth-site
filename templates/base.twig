@@ -56,7 +56,17 @@
 					{% if menu.get_items %}
 						<nav class="page-header__nav">
 							{% for item in menu.get_items %}
-								<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{item.title}}</a>
+								<div class="page-header__nav-items">
+									<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{ item.title }}</a>
+
+									{% if item.get_children %}
+										<div class="page-header__nav-children">
+											{% for child in item.get_children %}
+					                            <a href="{{ child.get_link }}" class="page-header__nav-item page-header__nav-item--child {{ child.classes|join(' ') }}">{{ child.title }}</a>
+					                        {% endfor %}
+										</div>
+									{% endif %}
+								</div>
 							{% endfor %}
 						</nav>
 					{% endif %}
