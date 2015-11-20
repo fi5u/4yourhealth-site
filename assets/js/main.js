@@ -8,7 +8,7 @@
             minimumResultsForSearch: Infinity // Remove search box (may need to make this conditional)
         };
 
-        if ($('select').length) {
+        if ($('#select-super-header-lang').length) {
             $('select').select2(select2Opts);
         }
 
