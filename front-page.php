@@ -13,6 +13,7 @@ if ( ! class_exists( 'Timber' ) ) {
 $context = Timber::get_context();
 $context['post'] = new TimberPost();
 $context['sidebar'] = Timber::get_sidebar('sidebar.php');
+$context['slides'] = Timber::get_posts('post_type=carousel_slide');
 
 $templates = array( 'front-page.twig', 'index.twig' );
 

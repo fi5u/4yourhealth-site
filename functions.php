@@ -12,8 +12,11 @@ Timber::$dirname = array('templates', 'views');
 class StarterSite extends TimberSite {
 
 	function __construct() {
+		include('includes/vendor/meta-box-class/my-meta-box-class.php');
+		include('includes/Init.class.php');
 		include('includes/Wp_Enqueue_Scripts.class.php');
 		include('includes/Customize_Register.class.php');
+		include('includes/After_Setup_Theme.class.php');
 
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
@@ -23,21 +26,12 @@ class StarterSite extends TimberSite {
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( new Init, 'register_post_types' ) );
         add_action( 'wp_enqueue_scripts', array( new Wp_Enqueue_Scripts, 'enqueue_scripts') );
         add_action( 'customize_register', array( new Customize_Register, 'yourhealth_theme_customizer' ) );
-
+        add_action( 'after_setup_theme', array( new After_Setup_Theme, 'add_image_sizes' ) );
 
 		parent::__construct();
-	}
-
-	function register_post_types() {
-		//this is where you can register custom post types
-	}
-
-	function register_taxonomies() {
-		//this is where you can register custom taxonomies
 	}
 
 	function add_to_context( $context ) {

@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content_full %}
-    {% include 'modules/_carousel.twig' %}
+    {% include 'modules/_carousel.twig' with { 'slides': slides } only %}
 {% endblock %}
 
 {% block content %}

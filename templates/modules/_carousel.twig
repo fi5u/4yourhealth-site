@@ -1,26 +1,26 @@
+{% if slides %}
 <div class="carousel">
     <div class="carousel__inner">
         <ul class="bxslider" id="carousel-hero">
+            {% for slide in slides %}
             <li>
-                <div class="carousel__content" style="background-image: url(/wp-content/themes/4yourhealth-2015/assets/images/hero-splash-product.png); background-position: bottom center;">
+                <div class="carousel__content" style="background-image: url({{ slide.thumbnail.src('carousel_slide') }}); background-position: bottom center;">
                     <div class="carousel__text">
-                        <h2 class="carousel__title">Special offer -25%</h2>
-                        <div class="carousel__subtext">Performance &amp; design.<br>Amazing product.</div>
-                        <a href="#" class="carousel__link">Learn more</a>
+                        <h2 class="carousel__title">{{ slide.title }}</h2>
+                        {% if slide.content %}
+                            <div class="carousel__subtext">{{ slide.content }}.</div>
+                        {% endif %}
+                        {% if slide.yh_carousel_slide_link %}
+                            <a href="{{ slide.yh_carousel_slide_link }}" class="carousel__link">Learn more</a>
+                        {% endif %}
                     </div>
-                    <div class="carousel__price-badge">1450 €</div>
+                    {% if slide.yh_carousel_slide_price %}
+                        <div class="carousel__price-badge">{{ slide.yh_carousel_slide_price }}</div>
+                    {% endif %}
                 </div>
             </li>
-            <li>
-                <div class="carousel__content" style="background-image: url(/wp-content/themes/4yourhealth-2015/assets/images/hero-splash-product.png); background-position: bottom center;">
-                    <div class="carousel__text">
-                        <h2 class="carousel__title">Special offer -25%</h2>
-                        <div class="carousel__subtext">Performance &amp; design.<br>Amazing product.</div>
-                        <a href="#" class="carousel__link">Learn more</a>
-                    </div>
-                    <div class="carousel__price-badge">1450 €</div>
-                </div>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 </div>
+{% endif %}

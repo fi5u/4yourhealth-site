@@ -30,7 +30,7 @@
                     @extend %title;
                     @include font-size(18px);
 
-                    margin-bottom: 0px;
+                    margin-bottom: 10px;
 
                     text-transform: uppercase;
                     font-weight: normal;
@@ -49,13 +49,15 @@
                     @include font-size(18px);
                     @include line-height(20px);
 
-                    margin-bottom: 20px;
-
                     color: color(gray);
 
                     @include breakpoint(midi) {
                         @include font-size(28px);
                         @include line-height(30px);
+                    }
+
+                    p {
+                        margin: 12px 0;
                     }
                 }
 
