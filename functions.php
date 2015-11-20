@@ -22,6 +22,7 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_theme_support( 'site-logo' );
+		add_theme_support( 'woocommerce' );
 
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
@@ -60,4 +61,11 @@ new StarterSite();
 function myfoo( $text ) {
 	$text .= ' bar!';
 	return $text;
+}
+
+function timber_set_product( $post ) {
+    global $product;
+    if ( is_woocommerce() ) {
+        $product = get_product($post->ID);
+    }
 }
