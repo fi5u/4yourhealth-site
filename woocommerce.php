@@ -7,6 +7,7 @@ if (!class_exists('Timber')){
 
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
+$context['currency_symbol'] = get_woocommerce_currency_symbol();
 
 if (is_singular('product')) {
 

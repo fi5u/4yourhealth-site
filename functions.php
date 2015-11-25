@@ -17,6 +17,7 @@ class StarterSite extends TimberSite {
 		include('includes/Wp_Enqueue_Scripts.class.php');
 		include('includes/Customize_Register.class.php');
 		include('includes/After_Setup_Theme.class.php');
+		include('includes/Widgets_Init.class.php');
 
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
@@ -31,6 +32,11 @@ class StarterSite extends TimberSite {
         add_action( 'wp_enqueue_scripts', array( new Wp_Enqueue_Scripts, 'enqueue_scripts') );
         add_action( 'customize_register', array( new Customize_Register, 'yourhealth_theme_customizer' ) );
         add_action( 'after_setup_theme', array( new After_Setup_Theme, 'add_image_sizes' ) );
+        add_action( 'widgets_init', array( new Widgets_Init, 'do_widgets_init' ) );
+
+        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+		remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
 		parent::__construct();
 	}
@@ -58,10 +64,6 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
-function myfoo( $text ) {
-	$text .= ' bar!';
-	return $text;
-}
 
 function timber_set_product( $post ) {
     global $product;

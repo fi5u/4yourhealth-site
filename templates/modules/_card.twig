@@ -1,16 +1,56 @@
-<article class="card">
-    <a href="#" class="card__img-link">
+{% import _self as self %}
+
+<article class="card{% if class %} {{ class }}{% endif %}">
+    {{ fn('timber_set_product', post)}}
+
+    <a href="{{ post.link }}" class="card__img-link">
         {% if percent %}
             <div class="card__badge">
                 {{ percent }}
             </div>
         {% endif %}
-        <img src="http://placehold.it/228" alt="Product name" class="card__img">
+
+        {% if post.thumbnail %}
+            <img src="{{ post.thumbnail.src('card') }}" class="card__img" alt="{{ post.title }}">
+        {% else %}
+            <img src="{{ theme.path }}/assets/images/placeholder.png" class="card__img" alt="Product placeholder">
+        {% endif %}
+
+        {% if class == 'card--wide' %}
+            {{ self.price_wrap(post, currency_symbol) }}
+        {% endif %}
     </a>
-    <a href="#" class="card__title-link"><h3 class="card__title">Strauss T7 vesiautomaatti</h3></a><br>
-    <button class="card__btn">Add to cart</button>
-    <div class="card__price-wrap">
-        <div class="card__price">{% if old_price %}<span class="card__price--old">{{ old_price }}</span><br>{% endif %}
-        242 €</div>
-    </div>
+
+    {% do action('woocommerce_before_shop_loop_item_title') %}
+    <a href="{{ post.link }}" class="card__title-link"><h3 class="card__title">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h3></a>
+    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+
+    {% if post.post_excerpt %}
+        <div class="card__excerpt">
+            <p>{{ post.post_excerpt|replace({'&nbsp;': ''}) }}</p>
+        </div>
+    {% endif %}
+
+    <a href="/shop/?add-to-cart={{ post.id }}" rel="nofollow" data-product_id="{{ post.id }}" data-product_sku="" data-quantity="1" class="card__btn add_to_cart_button product_type_simple">Add to cart</a>
+
+    {% if not class == 'card--wide' %}
+        {{ self.price_wrap(post, currency_symbol) }}
+    {% endif %}
+
+    <meta itemprop="url" content="{{ post.link }}">
+    {% do action( 'woocommerce_after_shop_loop_item' ) %}
 </article>
+
+
+{# MACROS #}
+
+{% macro price_wrap(post, currency_symbol) %}
+
+{% if post.custom._sale_price[0] %}
+    {% set old_price = post.custom._regular_price[0] %}
+{% endif %}
+
+<div class="card__price-wrap">
+    <div class="card__price">{% if old_price %}<span class="card__price--old">{{ currency_symbol }} {{ old_price }}</span><br>{% endif %}{{ currency_symbol }} {{ post.custom._price[0] }}</div>
+</div>
+{% endmacro %}
