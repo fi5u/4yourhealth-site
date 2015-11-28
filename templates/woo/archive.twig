@@ -1,22 +1,23 @@
 {% extends "base.twig" %}
 
 {% block content %}
+    <div class="page--archive">
+        {% do action('woocommerce_before_main_content') %}
 
-    {% do action('woocommerce_before_main_content') %}
+        <div class="before-shop-loop">
+            {% do action( 'woocommerce_before_shop_loop') %}
+        </div>
 
-    <div class="before-shop-loop">
-        {% do action( 'woocommerce_before_shop_loop') %}
+        <div class="loop">
+            {% for post in products %}
+
+                {% include ["modules/_card.twig"] with {'post': post, 'class': 'card--wide', 'currency_symbol': currency_symbol} only %}
+
+            {% endfor %}
+        </div>
+
+        {% do action('woocommerce_after_shop_loop') %}
+        {% do action('woocommerce_after_main_content') %}
     </div>
-
-    <div class="loop">
-        {% for post in products %}
-
-            {% include ["modules/_card.twig"] with {'post': post, 'class': 'card--wide', 'currency_symbol': currency_symbol} only %}
-
-        {% endfor %}
-    </div>
-
-    {% do action('woocommerce_after_shop_loop') %}
-    {% do action('woocommerce_after_main_content') %}
 
 {% endblock  %}
