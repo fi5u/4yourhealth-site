@@ -20,6 +20,8 @@
             window.location = $('#select-super-header-lang').val();
         });
 
+        $('.woo-widget').not('.widget_product_categories').addClass('woo-widget--is-closed');
+
         $(document).ready(function() {
             $('#carousel-hero').bxSlider({
                 auto: true,
@@ -64,5 +66,9 @@
 
         });
     }
+
+    $('.woo-widget__title').click(function() {
+        $(this).parent('.woo-widget').toggleClass('woo-widget--is-closed');
+    });
 
 })(window, document, jQuery);

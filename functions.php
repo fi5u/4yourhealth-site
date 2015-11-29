@@ -44,6 +44,31 @@ class StarterSite extends TimberSite {
 			echo '<div class="card__badge">' . __( 'Sale', 'woocommerce' ) . '</div>';
 		}
 
+		function override_woo_related_widgets() {
+		    if ( class_exists( 'YITH_WCAN_Navigation_Widget' ) ) {
+		        unregister_widget( 'YITH_WCAN_Navigation_Widget' );
+		        include_once( 'includes/woo/class.yith-wcan-navigation-widget.php' );
+		        register_widget( 'CUSTOM_YITH_WCAN_Navigation_Widget' );
+		    }
+		}
+		add_action( 'widgets_init', 'override_woo_related_widgets', 15 );
+
+
+		function override_woocommerce_widgets() {
+		    if ( class_exists( 'WC_Widget_Product_Categories' ) ) {
+		        unregister_widget( 'WC_Widget_Product_Categories' );
+		        unregister_widget( 'WC_Widget_Price_Filter' );
+
+		        include_once( 'includes/woo/custom-class-wc-widget-product-categories.php' );
+		        include_once( 'includes/woo/custom-class-wc-widget-price-filter.php' );
+
+		        register_widget( 'custom_WC_Widget_Product_Categories' );
+		        register_widget( 'custom_WC_Widget_Price_Filter' );
+		    }
+		}
+		add_action( 'widgets_init', 'override_woocommerce_widgets', 16 );
+
+
 		parent::__construct();
 	}
 

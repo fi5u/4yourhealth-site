@@ -1,0 +1,76 @@
+.woo-widget {
+    margin-bottom: -2px;
+    background: color(white, dark);
+    border: 1px solid color(gray, lighter);
+
+    &:last-of-type {
+        border-radius: 0 0 5px 5px;
+    }
+
+    &__title {
+        @extend %title;
+        @include font-size(title, woo-widget);
+
+        display: block;
+        position: relative;
+        z-index: 2;
+        height: auto;
+        padding: 22px;
+        margin: 0;
+
+        border: 1px solid color(gray, lighter);
+        background-color: color(gray, lightest);
+        text-transform: uppercase;
+        opacity: 1;
+
+        &:after {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 24px;
+            height: 24px;
+            margin-top: -12px;
+            right: 22px;
+
+            color: color(white);
+            text-align: center;
+            line-height: 24px;
+            background-color: color(green, darker);
+            content: ">";
+
+            transform: rotate(-90deg);
+
+            .woo-widget--is-closed & {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        padding: 22px;
+
+        overflow: hidden;
+        transition: all .3s;
+
+        .woo-widget--is-closed & {
+            height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            transform: translateY(-100%);
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+            li {
+                list-style: none;
+            }
+}
