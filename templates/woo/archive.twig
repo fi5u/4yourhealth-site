@@ -1,5 +1,9 @@
 {% extends "base.twig" %}
 
+{% block content_full %}
+    {% do action('woo_custom_breadcrumb') %}
+{% endblock %}
+
 {% block content %}
     <div class="page--archive">
         {% do action('woocommerce_before_main_content') %}

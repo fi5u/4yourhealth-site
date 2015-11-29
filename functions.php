@@ -42,7 +42,6 @@ class StarterSite extends TimberSite {
 
 		function woo_custom_hide_sales_flash() {
 			echo '<div class="card__badge">' . __( 'Sale', 'woocommerce' ) . '</div>';
-			//echo '<span class="onsale">' . __( 'Sales!', 'woocommerce' ) . '</span>';
 		}
 
 		parent::__construct();

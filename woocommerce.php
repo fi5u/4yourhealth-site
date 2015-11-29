@@ -5,6 +5,23 @@ if (!class_exists('Timber')){
     return;
 }
 
+function woocommerce_remove_breadcrumb() {
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+}
+add_action('woocommerce_before_main_content', 'woocommerce_remove_breadcrumb');
+
+
+function woocommerce_custom_breadcrumb() {
+    $breadcrumb_args = array(
+        'wrap_before'   => '<div class="woocommerce-breadcrumb-wrap"><div class="woocommerce-breadcrumb">',
+        'wrap_after'    => '</div></div>',
+        'delimiter'     => ' > '
+    );
+    woocommerce_breadcrumb($breadcrumb_args);
+}
+add_action( 'woo_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
+
+
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 $context['currency_symbol'] = get_woocommerce_currency_symbol();

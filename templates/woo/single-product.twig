@@ -1,5 +1,9 @@
 {% extends "base.twig" %}
 
+{% block content_full %}
+    {% do action('woo_custom_breadcrumb') %}
+{% endblock %}
+
 {% block content %}
 
     {% do action('woocommerce_before_single_product') %}

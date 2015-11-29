@@ -1,3 +1,45 @@
 .woocommerce-pagination {
     margin-top: 50px;
 }
+
+.woocommerce {
+    .woocommerce-breadcrumb-wrap {
+        background-color: color(green, darker);
+    }
+        .woocommerce-breadcrumb {
+            @extend %layout-inner;
+            @include font(title);
+            @include font-size(18px);
+
+            padding: 22px 0;
+            margin-bottom: 0;
+
+            color: color(white);
+            font-weight: 700;
+            text-transform: uppercase;
+
+            a {
+                color: color(white);
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    nav.woocommerce-pagination ul {
+        border-color: color(white);
+
+        li {
+            border-color: color(white);
+
+            a,
+            span {
+                background-color: color(green);
+                color: color(gray, lightest);
+            }
+        }
+    }
+}
