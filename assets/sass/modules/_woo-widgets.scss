@@ -1,4 +1,6 @@
 .woo-widget {
+    @include font(special);
+
     margin-bottom: -2px;
     background: color(white, dark);
     border: 1px solid color(gray, lighter);
@@ -9,6 +11,7 @@
 
     &__title {
         @extend %title;
+        @include font(special);
         @include font-size(title, woo-widget);
 
         display: block;
@@ -34,7 +37,7 @@
 
             color: color(white);
             text-align: center;
-            line-height: 24px;
+            line-height: 22px;
             background-color: color(green, darker);
             content: ">";
 
@@ -71,6 +74,48 @@
         }
 
             li {
+                position: relative;
+                padding-left: 4px;
+                margin-left: 20px;
+
                 list-style: none;
+                text-transform: uppercase;
+
+                &:before,
+                &.chosen .clear:before {
+                    position: absolute;
+                    top: 3px;
+                    left: -20px;
+                    width: 16px;
+                    height: 16px;
+
+                    text-align: center;
+                    line-height: 14px;
+                    font-weight: bold;
+                    content: "";
+                    border: 1px solid color(gray);
+                    border-radius: 3px;
+                }
+
+                + li {
+                    margin-top: 12px;
+                }
+
+                &.current-cat,
+                &.chosen .clear {
+                    &:before {
+                        color: color(white);
+                        background-color: color(green, darker);
+                        content: "+";
+                    }
+                }
+
+                a {
+                    @include hyphens(auto);
+
+                    color: color(gray, dark);
+                    text-decoration: none;
+                    cursor: pointer;
+                }
             }
 }

@@ -42,4 +42,21 @@
             }
         }
     }
+
+    .widget_layered_nav ul li.chosen a:before,
+    .widget_layered_nav_filters ul li a:before {
+        position: absolute;
+        right: 0px;
+        top: 4px;
+    }
+}
+
+small.count {
+    &:before {
+        content: "(";
+    }
+
+    &:after {
+        content: ")";
+    }
 }
