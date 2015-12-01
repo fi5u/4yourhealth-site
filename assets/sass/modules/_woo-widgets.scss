@@ -1,6 +1,7 @@
 .woo-widget {
     @include font(special);
 
+    overflow: hidden;
     margin-bottom: -2px;
     background: color(white, dark);
     border: 1px solid color(gray, lighter);
