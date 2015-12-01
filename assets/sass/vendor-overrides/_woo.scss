@@ -49,6 +49,22 @@
         right: 0px;
         top: 4px;
     }
+
+    .widget_price_filter {
+        .price_slider_wrapper .ui-widget-content {
+            background-color: color(gray, lighter);
+        }
+
+        .ui-slider {
+            .ui-slider-range {
+                background-color: color(green, darker);
+            }
+
+            .ui-slider-handle {
+                background-color: color(green, darker);
+            }
+        }
+    }
 }
 
 small.count {
