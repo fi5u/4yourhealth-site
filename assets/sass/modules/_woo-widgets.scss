@@ -22,7 +22,7 @@
         padding: 22px;
         margin: 0;
 
-        border: 1px solid color(gray, lighter);
+        border-bottom: 1px solid color(gray, lighter);
         background-color: color(gray, lightest);
         text-transform: uppercase;
         opacity: 1;
@@ -82,41 +82,66 @@
                 list-style: none;
                 text-transform: uppercase;
 
-                &:before,
-                &.chosen .clear:before {
-                    position: absolute;
-                    top: 3px;
-                    left: -20px;
-                    width: 16px;
-                    height: 16px;
-
-                    text-align: center;
-                    line-height: 14px;
-                    font-weight: bold;
-                    content: "";
-                    border: 1px solid color(gray);
-                    border-radius: 3px;
-                }
-
                 + li {
                     margin-top: 12px;
-                }
-
-                &.current-cat,
-                &.chosen .clear {
-                    &:before {
-                        color: color(white);
-                        background-color: color(green, darker);
-                        content: "+";
-                    }
                 }
 
                 a {
                     @include hyphens(auto);
 
+                    position: relative;
+
                     color: color(gray, dark);
                     text-decoration: none;
                     cursor: pointer;
+
+                    &:after {
+                        position: absolute;
+                        top: 3px;
+                        left: -20px;
+                        width: 16px;
+                        height: 16px;
+
+                        text-align: center;
+                        line-height: 14px;
+                        font-weight: bold;
+                        content: "";
+                        border: 1px solid color(gray);
+                        border-radius: 3px;
+                    }
+
+                    &:hover {
+                        &:after {
+                            color: color(gray);
+                            content: "+" !important;
+                        }
+                    }
+
+                    @at-root .current-cat a {
+                        &:after {
+                            color: color(white);
+                            font-weight: normal;
+                            background-color: color(green, darker) !important;
+                            content: "+" !important;
+                        }
+
+                        &:hover:after {
+                            color: color(white) !important;
+                        }
+                    }
+
+                    @at-root .chosen a {
+                        &:before {
+                            display: none;
+                        }
+
+                        &:after {
+                            color: color(white) !important;
+                            font-weight: normal;
+                            background-color: color(green, darker) !important;
+                            content: "+" !important;
+                        }
+                    }
                 }
             }
 }

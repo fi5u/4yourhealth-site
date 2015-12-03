@@ -1,0 +1,5 @@
+[id^="select2-orderby-"] {
+    .select2-results__option:before {
+        display: none !important;
+    }
+}

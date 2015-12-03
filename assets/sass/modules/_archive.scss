@@ -1,0 +1,18 @@
+.archive {
+    &__bar {
+        @include font(special);
+
+        padding: 10px;
+
+        background-color: color(gray, lightest);
+        border: 1px solid color(gray, lighter);
+        border-radius: 3px;
+
+        .woocommerce-pagination {
+            position: relative;
+            top: -3px;
+            float: right;
+            margin: 0;
+        }
+    }
+}

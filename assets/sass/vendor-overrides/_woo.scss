@@ -30,15 +30,29 @@
         }
 
     nav.woocommerce-pagination ul {
-        border-color: color(white);
+        border: none;
 
         li {
-            border-color: color(white);
+            border: 1px solid color(gray, lighter);
+
+             + li {
+                margin-left: 3px;
+             }
 
             a,
             span {
                 background-color: color(green);
                 color: color(gray, lightest);
+            }
+
+            span.current {
+                color: color(white);
+                background-color: color(green, darker);
+            }
+
+            a {
+                background-color: color(gray, lightest);
+                color: color(gray);
             }
         }
     }
@@ -64,6 +78,18 @@
                 background-color: color(green, darker);
             }
         }
+    }
+
+    .woocommerce-ordering,
+    .woocommerce-page .woocommerce-ordering,
+    .woocommerce-result-count {
+        display: inline-block;
+        float: none;
+        margin: 0;
+    }
+
+    .woocommerce-result-count {
+        margin-left: 20px;
     }
 }
 

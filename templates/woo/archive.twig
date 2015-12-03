@@ -13,6 +13,11 @@
         </div>
 
         <div class="loop">
+            <div class="archive__bar">
+                {{ function('woocommerce_catalog_ordering') }}
+                {{ function('woocommerce_result_count') }}
+                {{ function('woocommerce_pagination') }}
+            </div>
             {% for post in products %}
 
                 {% include ["modules/_card.twig"] with {'post': post, 'class': 'card--wide', 'currency_symbol': currency_symbol} only %}

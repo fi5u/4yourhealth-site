@@ -67,7 +67,8 @@ class StarterSite extends TimberSite {
 		    }
 		}
 		add_action( 'widgets_init', 'override_woocommerce_widgets', 16 );
-
+		remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+		remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 		parent::__construct();
 	}
