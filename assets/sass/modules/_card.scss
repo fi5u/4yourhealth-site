@@ -38,6 +38,10 @@
             &:nth-child(3n) {
                 @include last;
             }
+
+            &:nth-child(3n+1) {
+                clear: left;
+            }
         }
     }
 
@@ -58,7 +62,7 @@
     &__img-link {
         display: block;
         position: relative;
-        min-width: 228px;
+        //min-width: 228px;
         margin-right: 8%;
 
         .card--wide & {

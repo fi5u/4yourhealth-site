@@ -91,7 +91,6 @@ class StarterSite extends TimberSite {
 		$twig->addFilter( 'myfoo', new Twig_Filter_Function( 'myfoo' ) );
 		return $twig;
 	}
-
 }
 
 new StarterSite();
