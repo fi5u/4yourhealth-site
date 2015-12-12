@@ -5,13 +5,9 @@
 
     {{ card.image_link(post, percent, class, card, currency_symbol) }}
 
-    {% do action('woocommerce_before_shop_loop_item_title') %}
-
     {{ card.title_link(post) }}
 
-    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
-
-    {{ card.excerpt(post, true) }}
+    {{ card.excerpt(post, false) }}
 
     {{ card.add_to_cart(post) }}
 
@@ -20,7 +16,4 @@
     {% endif %}
 
     {{ card.meta_url(post) }}
-
-    {% do action( 'woocommerce_after_shop_loop_item' ) %}
 </article>
-

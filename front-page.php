@@ -14,6 +14,8 @@ $context = Timber::get_context();
 $context['post'] = new TimberPost();
 $context['sidebar'] = Timber::get_sidebar('sidebar.php');
 $context['slides'] = Timber::get_posts('post_type=carousel_slide');
+$context['products'] = Timber::get_posts('post_type=product');
+$context['currency_symbol'] = get_woocommerce_currency_symbol();
 
 $templates = array( 'front-page.twig', 'index.twig' );
 

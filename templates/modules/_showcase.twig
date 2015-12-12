@@ -11,11 +11,9 @@
     </div>
 
     <div class="showcase__grid">
-        {% include 'modules/_card.twig' %}
-        {% include 'modules/_card.twig' %}
-        {% include 'modules/_card.twig' with {'old_price': '434,99 €'} only %}
-        {% include 'modules/_card.twig' %}
-        {% include 'modules/_card.twig' with {'percent': '-25%'} only %}
-        {% include 'modules/_card.twig' %}
+        {% for product in products %}
+            {% include 'modules/_card_no_wc.twig' with {post: product, currency_symbol: currency_symbol} only %}
+        {% endfor %}
     </div>
+
 </section>

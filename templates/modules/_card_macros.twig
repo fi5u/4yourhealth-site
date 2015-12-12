@@ -1,0 +1,70 @@
+{% macro price_wrap(post, currency_symbol) %}
+
+{% if post.custom._sale_price[0] %}
+    {% set old_price = post.custom._regular_price[0] %}
+{% endif %}
+
+<div class="card__price-wrap">
+    <div class="card__price">{% if old_price %}<span class="card__price--old">{{ currency_symbol }} {{ old_price }}</span><br>{% endif %}{{ currency_symbol }} {{ post.custom._price[0] }}</div>
+</div>
+{% endmacro %}
+
+
+
+{% macro image_link(post, percent, class, card, currency_symbol) %}
+
+<a href="{{ post.link }}" class="card__img-link">
+    {% if percent %}
+        <div class="card__badge">
+            {{ percent }}
+        </div>
+    {% endif %}
+
+    {% if post.thumbnail %}
+        <img src="{{ post.thumbnail.src('card') }}" class="card__img" alt="{{ post.title }}">
+    {% else %}
+        <img src="{{ theme.path }}/assets/images/placeholder.png" class="card__img" alt="Product placeholder">
+    {% endif %}
+
+    {% if class == 'card--wide' %}
+        {{ card.price_wrap(post, currency_symbol) }}
+    {% endif %}
+</a>
+
+{% endmacro %}
+
+
+
+{% macro title_link(post) %}
+
+<a href="{{ post.link }}" class="card__title-link"><h3 class="card__title">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h3></a>
+
+{% endmacro %}
+
+
+
+{% macro excerpt(post, should_show) %}
+
+{% if post.post_excerpt and should_show %}
+    <div class="card__excerpt">
+        <p>{{ post.post_excerpt|replace({'&nbsp;': ''}) }}</p>
+    </div>
+{% endif %}
+
+{% endmacro %}
+
+
+
+{% macro add_to_cart(post) %}
+
+<a href="/shop/?add-to-cart={{ post.id }}" rel="nofollow" data-product_id="{{ post.id }}" data-product_sku="" data-quantity="1" class="card__btn add_to_cart_button product_type_simple">Add to cart</a>
+
+{% endmacro %}
+
+
+
+{% macro meta_url(post) %}
+
+<meta itemprop="url" content="{{ post.link }}">
+
+{% endmacro %}
