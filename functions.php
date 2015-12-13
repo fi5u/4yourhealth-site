@@ -58,12 +58,15 @@ class StarterSite extends TimberSite {
 		    if ( class_exists( 'WC_Widget_Product_Categories' ) ) {
 		        unregister_widget( 'WC_Widget_Product_Categories' );
 		        unregister_widget( 'WC_Widget_Price_Filter' );
+		        //unregister_widget( 'WC_Widget_Cart' );
 
 		        include_once( 'includes/woo/custom-class-wc-widget-product-categories.php' );
 		        include_once( 'includes/woo/custom-class-wc-widget-price-filter.php' );
+		        //include_once( 'includes/woo/custom-class-wc-widget-cart.php' );
 
 		        register_widget( 'custom_WC_Widget_Product_Categories' );
 		        register_widget( 'custom_WC_Widget_Price_Filter' );
+		        //register_widget( 'custom_WC_Widget_Cart' );
 		    }
 		}
 		add_action( 'widgets_init', 'override_woocommerce_widgets', 16 );
@@ -82,6 +85,9 @@ class StarterSite extends TimberSite {
 		$context['site'] = $this;
 		$context['site']->logo = get_theme_mod( 'yourhealth_logo' ) ? '<img src="' . esc_url( get_theme_mod( 'yourhealth_logo' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" class="page-header__logo">' : $context['site']->name;
 		$context['lang_current'] = qtranxf_getLanguage();
+		$context['cart'] = Timber::get_widgets('shop_cart');
+		$context['cart_count'] = WC()->cart->cart_contents_count;
+		$context['cart_total'] = WC()->cart->get_cart_total();
 		return $context;
 	}
 

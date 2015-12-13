@@ -102,3 +102,14 @@ small.count {
         content: ")";
     }
 }
+
+.mini_cart_item {
+    a {
+        text-decoration: none;
+        color: color(green, darker);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

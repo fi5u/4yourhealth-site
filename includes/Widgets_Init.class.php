@@ -18,6 +18,15 @@ if ( ! class_exists( 'Widgets_Init') ) :
                 'after_title'   => '</h2>',
             ) );
 
+            register_sidebar( array(
+                'name'          => 'Shop cart',
+                'id'            => 'shop_cart',
+                'before_widget' => '<div id="%1$s" class="page-header__basket-list %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h5 class="page-header__basket-list-title">',
+                'after_title'   => '</h5>',
+            ) );
+
         }
 
     }

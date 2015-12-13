@@ -71,4 +71,16 @@
         $(this).parent('.woo-widget').toggleClass('woo-widget--is-closed');
     });
 
+    $( document ).on( 'click', '.add_to_cart_button', function() {
+        var count = 0;
+        window.setTimeout(function() {
+            $('.mini_cart_item').each(function() {
+                count = count + parseInt($(this).find('.quantity').html());
+                console.log(count);
+            });
+            $('#mini-cart-count').text(count);
+            $('#mini-cart-total').text($('.page-header__basket-list .total .amount').html());
+        }, 1000);
+    });
+
 })(window, document, jQuery);
