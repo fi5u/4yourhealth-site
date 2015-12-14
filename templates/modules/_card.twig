@@ -3,7 +3,7 @@
 <article class="card{% if class %} {{ class }}{% endif %}">
     {{ fn('timber_set_product', post)}}
 
-    {{ card.image_link(post, percent, class, card, currency_symbol) }}
+    {{ card.image_link(post, percent, class, card, currency_symbol, theme) }}
 
     {% do action('woocommerce_before_shop_loop_item_title') %}
 
