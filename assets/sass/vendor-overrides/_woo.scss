@@ -11,7 +11,7 @@
             @include font(title);
             @include font-size(18px);
 
-            padding: 22px 0;
+            padding: 22px 10px;
             margin-bottom: 0;
 
             color: color(white);
@@ -26,6 +26,11 @@
                     text-decoration: underline;
                     cursor: pointer;
                 }
+            }
+
+            @include breakpoint(full) {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
