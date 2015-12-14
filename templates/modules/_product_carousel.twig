@@ -6,17 +6,19 @@
             <p class="product-carousel__subtitle">{{ subtitle }}</p>
         {% endif %}
     {% endif %}
+
     <div class="product-carousel__inner">
         <ul class="bxslider" id="carousel-product">
             <li>
-                {% include 'modules/_card_no_wc.twig' %}
-                {% include 'modules/_card_no_wc.twig' %}
-                {% include 'modules/_card_no_wc.twig' %}
-            </li>
-            <li>
-                {% include 'modules/_card_no_wc.twig' %}
-                {% include 'modules/_card_no_wc.twig' %}
-                {% include 'modules/_card_no_wc.twig' %}
+            {% for product in products %}
+                {% include 'modules/_card_no_wc.twig' with {post: product, currency_symbol: currency_symbol} only %}
+                {% if loop.index is divisibleby(3) %}
+                    </li>
+                    {% if not loop.last %}<li>{% endif %}
+                {% else %}
+                    {% if loop.last %}</li>{% endif %}
+                {% endif %}
+            {% endfor %}
             </li>
         </ul>
     </div>

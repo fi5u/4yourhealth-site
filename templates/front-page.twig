@@ -6,12 +6,11 @@
 
 {% block content %}
     {% include 'modules/_showcase.twig' %}
-
     <h1 class="page-content__title">{{ post.post_title }}</h1>
     <div class="page-content__content">
         {{ post.content }}
     </div>
 
-    {% include 'modules/_product_carousel.twig' with {'title': 'On Sale', 'subtitle': 'Only with us you can get a new model with a discount.'} only %}
+    {% include 'modules/_product_carousel.twig' with {'title': 'On Sale', 'subtitle': 'Only with us you can get a new model with a discount.', 'products': sale_products, currency_symbol: currency_symbol} only %}
 
 {% endblock %}

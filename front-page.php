@@ -15,6 +15,26 @@ $context['post'] = new TimberPost();
 $context['sidebar'] = Timber::get_sidebar('sidebar.php');
 $context['slides'] = Timber::get_posts('post_type=carousel_slide');
 $context['products'] = Timber::get_posts('post_type=product&posts_per_page=6&orderby=name&order=ASC');
+$sale_args = array(
+    'post_type'      => 'product',
+    'posts_per_page' => -1,
+    'meta_query'     => array(
+        'relation' => 'OR',
+        array( // Simple products type
+            'key'           => '_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        ),
+        array( // Variable products type
+            'key'           => '_min_variation_sale_price',
+            'value'         => 0,
+            'compare'       => '>',
+            'type'          => 'numeric'
+        )
+    )
+);
+$context['sale_products'] = Timber::get_posts($sale_args);
 $context['currency_symbol'] = get_woocommerce_currency_symbol();
 $context['sort'] = $_GET && $_GET['sort'] ? $_GET['sort'] : false;
 
