@@ -58,15 +58,12 @@ class StarterSite extends TimberSite {
 		    if ( class_exists( 'WC_Widget_Product_Categories' ) ) {
 		        unregister_widget( 'WC_Widget_Product_Categories' );
 		        unregister_widget( 'WC_Widget_Price_Filter' );
-		        //unregister_widget( 'WC_Widget_Cart' );
 
 		        include_once( 'includes/woo/custom-class-wc-widget-product-categories.php' );
 		        include_once( 'includes/woo/custom-class-wc-widget-price-filter.php' );
-		        //include_once( 'includes/woo/custom-class-wc-widget-cart.php' );
 
 		        register_widget( 'custom_WC_Widget_Product_Categories' );
 		        register_widget( 'custom_WC_Widget_Price_Filter' );
-		        //register_widget( 'custom_WC_Widget_Cart' );
 		    }
 		}
 		add_action( 'widgets_init', 'override_woocommerce_widgets', 16 );

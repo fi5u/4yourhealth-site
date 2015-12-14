@@ -76,7 +76,6 @@
         window.setTimeout(function() {
             $('.mini_cart_item').each(function() {
                 count = count + parseInt($(this).find('.quantity').html());
-                console.log(count);
             });
             $('#mini-cart-count').text(count);
             $('#mini-cart-total').text($('.page-header__basket-list .total .amount').html());
