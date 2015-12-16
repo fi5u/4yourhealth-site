@@ -22,7 +22,6 @@ function woocommerce_custom_breadcrumb() {
 add_action( 'woo_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
 
 
-
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 $context['currency_symbol'] = get_woocommerce_currency_symbol();
@@ -32,6 +31,7 @@ if (is_singular('product')) {
     $context['post']    = Timber::get_post();
     $product            = get_product( $context['post']->ID );
     $context['product'] = $product;
+    $context['sidebar'] = false;
 
     Timber::render('templates/woo/single-product.twig', $context);
 

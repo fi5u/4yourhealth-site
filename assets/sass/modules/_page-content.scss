@@ -5,10 +5,20 @@
         padding-top: 56px;
 
         background: url(assets/images/water-bg.png) no-repeat top right;
+
+        .single-product & {
+            padding-top: 30px;
+        }
     }
 
         &__main {
             .page-content--has-sidebar & {
+                @include breakpoint($bp-sidebar-break) {
+                    @include span(9 of 12);
+                }
+            }
+
+            .single-product & {
                 @include breakpoint($bp-sidebar-break) {
                     @include span(9 of 12);
                 }

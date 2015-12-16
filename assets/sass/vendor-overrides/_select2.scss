@@ -3,3 +3,7 @@
         display: none !important;
     }
 }
+
+.single .select2-results__option:before {
+    display: none;
+}

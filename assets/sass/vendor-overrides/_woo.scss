@@ -118,3 +118,108 @@ small.count {
         }
     }
 }
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+    background-color: color(green, darker);
+
+    &:hover {
+        background-color: darken(color(green, darker), 6%);
+    }
+}
+
+
+.wc-tabs-wrapper {
+    @include full;
+
+    margin-top: 40px;
+
+    .panel {
+        @include breakpoint($bp-sidebar-break) {
+            @include span(7 of 9);
+            @include last;
+        }
+    }
+}
+
+.wc-tabs {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoint($bp-sidebar-break) {
+        @include span(2 of 9);
+    }
+
+    li {
+        position: relative;
+        padding: 16px 0;
+
+        + li {
+            border-top: 1px solid color(gray, lighter);
+        }
+
+        &:first-child {
+            padding-top: 0;
+
+            &.active:after {
+                margin-top: -24px;
+            }
+        }
+
+        &.active {
+            &:after {
+                @include font(title);
+
+                position: absolute;
+                top: 50%;
+                right: -12px;
+                margin-top: -16px;
+
+                content: ">";
+                color: color(green, darker);
+                font-size: 24px;
+            }
+        }
+    }
+
+    a {
+        @include font(title);
+        @include font-size(tab, title);
+
+        display: inline-block;
+
+        text-decoration: none;
+        color: color(green, darker);
+    }
+}
+
+.wc-tab {
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.related {
+    clear: both;
+}
+
+.stars {
+    a {
+        color: color(green, darker);
+    }
+}
+
+.comment-form-rating {
+    margin-top: 10px !important;
+
+    .stars {
+        margin-top: 10px !important;
+    }
+
+    select[name='rating']+.select2 {
+        display: none;
+    }
+}

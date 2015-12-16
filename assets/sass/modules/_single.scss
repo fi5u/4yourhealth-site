@@ -1,0 +1,120 @@
+$map: layout(12 0.05);
+
+.single {
+    &__images {
+        position: relative;
+
+        @include breakpoint(midi) {
+            @include span(4 of 9);
+        }
+    }
+
+    .entry-title {
+        margin-top: 0;
+    }
+
+    .entry-summary {
+        @include breakpoint($bp-sidebar-break) {
+            @include span(5 of 9);
+            @include last;
+        }
+    }
+
+    .thumbnails {
+        @include clearfix;
+
+        .zoom {
+            @include breakpoint(mini) {
+                @include layout($map fluid no-gutters);
+                @include span(4 of 12);
+
+                &:nth-child(3n) {
+                    @include last;
+                }
+
+                &:nth-child(3n+1) {
+                    clear: left;
+                }
+            }
+
+            @include breakpoint(midi) {
+                @include layout($map fluid no-gutters);
+                @include span(2 of 4);
+
+                &:nth-child(2n) {
+                    @include last;
+                }
+
+                &:nth-child(2n+1) {
+                    clear: left;
+                }
+
+                &:nth-child(3n) {
+                    float: left;
+                }
+
+                &:nth-child(3n+1) {
+                    clear: none;
+                }
+            }
+        }
+    }
+
+    [itemprop="offers"] {
+        @include font(special);
+        font-weight: 700;
+        font-size: 20px;
+        color: color(gray);
+
+        ins {
+            text-decoration: none;
+        }
+    }
+
+    .card__badge {
+        top: 10%;
+        left: 0;
+    }
+
+    .quantity,
+    button.single_add_to_cart_button {
+        margin-bottom: 15px;
+    }
+
+    .quantity {
+        float: left;
+        margin-right: 10px;
+
+        .qty {
+            padding: 6px 0 7px;
+        }
+    }
+
+    button.single_add_to_cart_button {
+        float: left !important;
+    }
+
+    .product_meta {
+        @include font(title);
+
+        clear: both;
+        color: color(gray);
+        font-weight: 700;
+
+        a {
+            @include font(special);
+
+            color: color(green, darker);
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .posted_in {
+        display: none;
+    }
+}
