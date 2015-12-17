@@ -88,9 +88,6 @@
         }
 
     &__title-link {
-        position: relative;
-        z-index: 1;
-
         text-decoration: none;
     }
 
@@ -99,6 +96,8 @@
             @include font-size(title, card);
             @include hyphens(auto);
 
+            position: relative;
+            z-index: 1;
             margin-bottom: 0;
 
             color: color(gray);
@@ -129,6 +128,8 @@
 
     &__btn {
         @extend %btn;
+        position: relative;
+        z-index: 1;
 
         .card__title-link + & {
             margin-top: 15px;

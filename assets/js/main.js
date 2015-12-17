@@ -9,7 +9,7 @@
         };
 
         if ($('#select-super-header-lang').length) {
-            $('select').select2(select2Opts);
+            $('#select-super-header-lang').select2(select2Opts);
         }
 
         $('.page-header__basket-btn').click(function() {

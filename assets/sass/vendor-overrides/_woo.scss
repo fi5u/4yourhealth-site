@@ -140,6 +140,8 @@ small.count {
         @include breakpoint($bp-sidebar-break) {
             @include span(7 of 9);
             @include last;
+
+            padding-left: 30px;
         }
     }
 }
@@ -204,6 +206,7 @@ small.count {
 
 .related {
     clear: both;
+    padding-top: 30px;
 }
 
 .stars {
@@ -221,5 +224,23 @@ small.count {
 
     select[name='rating']+.select2 {
         display: none;
+    }
+}
+
+.variations {
+    margin-bottom: 30px;
+
+    .value {
+        padding: 0 10px;
+    }
+
+    .reset_variations {
+        margin-left: 10px;
+        text-decoration: none;
+        color: color(gray);
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

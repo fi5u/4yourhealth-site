@@ -22,12 +22,15 @@ function woocommerce_custom_breadcrumb() {
 add_action( 'woo_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
 
 
+if (is_shop() || is_product_category()) {
+    remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+}
+
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 $context['currency_symbol'] = get_woocommerce_currency_symbol();
 
 if (is_singular('product')) {
-
     $context['post']    = Timber::get_post();
     $product            = get_product( $context['post']->ID );
     $context['product'] = $product;
