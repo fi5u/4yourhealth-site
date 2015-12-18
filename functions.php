@@ -38,8 +38,6 @@ class StarterSite extends TimberSite {
 
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
-		//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-
 		add_filter('woocommerce_sale_flash', 'woo_custom_hide_sales_flash');
 
 		function woo_custom_hide_sales_flash() {
