@@ -26,6 +26,16 @@ if (is_shop() || is_product_category()) {
     remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 }
 
+
+function special_nav_class($classes, $item) {
+    if (is_woocommerce() && $item->ID == 36) {
+        $classes[] = 'current-menu-item';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 $context['currency_symbol'] = get_woocommerce_currency_symbol();

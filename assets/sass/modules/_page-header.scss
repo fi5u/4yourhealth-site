@@ -82,7 +82,8 @@
                         text-decoration: none;
 
                         &:hover {
-                            color: lighten(color(gray, darker), 15%);
+                            color: $c-key;
+                            border-bottom: 3px solid $c-key;
                         }
 
                         &:last-child {
@@ -271,7 +272,7 @@
                     &__basket-list-title {
                         @include font-size(title, basket-popup);
 
-                        margin: 0;
+                        margin: 0 0 10px;
 
                         font-weight: normal;
                     }

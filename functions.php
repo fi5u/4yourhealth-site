@@ -101,3 +101,4 @@ function timber_set_product( $post ) {
         $product = get_product($post->ID);
     }
 }
+

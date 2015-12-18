@@ -20,6 +20,8 @@
             window.location = $('#select-super-header-lang').val();
         });
 
+        $('select.orderby').select2();
+
         $('.woo-widget').not('.widget_product_categories').addClass('woo-widget--is-closed');
 
         $(document).ready(function() {

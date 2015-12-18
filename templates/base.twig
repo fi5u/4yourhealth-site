@@ -55,8 +55,8 @@
 
 					{% if menu.get_items %}
 						<nav class="page-header__nav">
-							{% for item in menu.get_items %}
-								<div class="page-header__nav-items">
+							<div class="page-header__nav-items">
+								{% for item in menu.get_items %}
 									<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{ item.title }}</a>
 
 									{% if item.get_children %}
@@ -66,8 +66,8 @@
 					                        {% endfor %}
 										</div>
 									{% endif %}
-								</div>
-							{% endfor %}
+								{% endfor %}
+							</div>
 						</nav>
 					{% endif %}
 				</div>

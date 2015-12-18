@@ -3,6 +3,11 @@
 }
 
 .woocommerce {
+    a.remove {
+        top: 16px;
+        text-decoration: none !important;
+    }
+
     .woocommerce-breadcrumb-wrap {
         background-color: color(green, darker);
     }
@@ -109,6 +114,11 @@ small.count {
 }
 
 .mini_cart_item {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+
+    border-bottom: 1px solid #ebe9eb;
+
     a {
         text-decoration: none;
         color: color(green, darker);
@@ -116,6 +126,15 @@ small.count {
         &:hover {
             text-decoration: underline;
         }
+    }
+
+    &:first-child {
+        padding-top: 0 !important;
+    }
+
+    &:last-child {
+        padding-top: 0 !important;
+        border: none;
     }
 }
 
