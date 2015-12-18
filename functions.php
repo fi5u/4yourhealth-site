@@ -82,6 +82,7 @@ class StarterSite extends TimberSite {
 		$context['cart'] = Timber::get_widgets('shop_cart');
 		$context['cart_count'] = WC()->cart->cart_contents_count;
 		$context['cart_total'] = WC()->cart->get_cart_total();
+		$context['search_query'] = get_search_query();
 		return $context;
 	}
 

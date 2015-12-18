@@ -80,7 +80,10 @@
 
 					<div class="page-header__side-bottom">
 						<div class="page-header__search-block">
-							<input type="search" class="page-header__search" placeholder="Search"><button type="submit" class="page-header__search-submit"></button>
+							<form action="/" method="get">
+								<input type="hidden" value="product" name="post_type" id="post_type" />
+								<input type="search" class="page-header__search" placeholder="Search" name="s" value="{{ search_query }}"><button type="submit" class="page-header__search-submit"></button>
+							</form>
 						</div>
 
 						<div class="page-header__basket">
