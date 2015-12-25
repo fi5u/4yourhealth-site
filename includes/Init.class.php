@@ -14,8 +14,16 @@ if ( ! class_exists( 'Init') ) :
                 'label'     => 'Carousel slides',
                 'supports'  => array('title', 'editor', 'thumbnail')
             );
-
             register_post_type( 'carousel_slide', $carousel_args );
+
+            $testimonials_args = array(
+                'public'    => false,
+                'show_ui'   => true,
+                'label'     => 'Testimonials',
+                'supports'  => array('title', 'editor', 'thumbnail')
+            );
+
+            register_post_type( 'testimonial', $testimonials_args );
         }
 
         public function custom_meta() {
@@ -36,6 +44,22 @@ if ( ! class_exists( 'Init') ) :
             $meta_carousel->addText($prefix.'carousel_slide_link',array('name'=> 'Slide link'));
             $meta_carousel->addText($prefix.'carousel_slide_price',array('name'=> 'Slide price'));
             $meta_carousel->Finish();
+
+
+            $meta_testimonials_config = array(
+                'id'                => 'testimonial_details',
+                'title'             => 'Testimonial details',
+                'pages'             => array('testimonial'),
+                'context'           => 'normal',
+                'priority'          => 'high',
+                'fields'            => array(),
+                'local_images'      => false,
+                'use_with_theme'    => false
+            );
+
+            $meta_testimonials =  new AT_Meta_Box($meta_testimonials_config);
+            $meta_testimonials->addText($prefix.'testimonial_author',array('name'=> 'Testimonial author'));
+            $meta_testimonials->Finish();
         }
     }
 

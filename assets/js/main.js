@@ -42,6 +42,7 @@
             });
 
             $('#carousel-testimonials').bxSlider({
+                mode: 'vertical',
                 auto: true,
                 autoHover: true,
                 pager: false,
@@ -50,6 +51,7 @@
                 prevText: '<',
                 minSlides: 1,
                 maxSlides: 1,
+                adaptiveHeight: true
             });
 
             $('#carousel-news').bxSlider({
