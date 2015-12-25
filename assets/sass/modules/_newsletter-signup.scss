@@ -1,4 +1,4 @@
-.newsletter-signup {
+div.widget_wysija {
     @extend %widget;
 
     padding: 22px;
@@ -9,7 +9,7 @@
     border-bottom: 2px solid color(green, darker);
     border-radius: 3px;
 
-    &__title {
+    .page-footer__widget-title {
         @include font(title);
         @include font-size(title, newsletter-signup);
 
@@ -17,13 +17,18 @@
         text-transform: uppercase;
     }
 
-    &__input {
+    label {
+        color: color(gray);
+        font-size: 12px;
+    }
+
+    input[type="text"] {
         @extend %input;
 
         margin-bottom: 20px;
     }
 
-    &__submit {
+    .wysija-submit {
         @extend %btn;
     }
 }

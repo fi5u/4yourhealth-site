@@ -44,6 +44,15 @@ if ( ! class_exists( 'Widgets_Init') ) :
                 'before_title'  => '<h2 class="page-footer__widget-title">',
                 'after_title'   => '</h5>',
             ) );
+
+            register_sidebar( array(
+                'name'          => 'Home side',
+                'id'            => 'home_side',
+                'before_widget' => '<div id="%1$s" class="page-footer__widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2 class="page-footer__widget-title">',
+                'after_title'   => '</h5>',
+            ) );
         }
 
     }
