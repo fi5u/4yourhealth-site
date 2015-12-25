@@ -113,6 +113,22 @@
 		</main>
 
 		<footer class="page-footer">
+			{% if sidebar_footer_left != "" or sidebar_footer_right != "" %}
+				<div class="page-footer__sidebars">
+					<div class="page-footer__sidebars-inner">
+						{% if sidebar_footer_left != "" %}
+							<div class="page-footer__sidebar--left">
+								{{ sidebar_footer_left }}
+							</div>
+						{% endif %}
+						{% if sidebar_footer_right != "" %}
+							<div class="page-footer__sidebar--right">
+								{{ sidebar_footer_right }}
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
 			<div class="page-footer__bottom">
 				<div class="page-footer__bottom-inner">
 					<small class="page-footer__small">4YourHealth &copy; {{"now"|date('Y')}}</small>

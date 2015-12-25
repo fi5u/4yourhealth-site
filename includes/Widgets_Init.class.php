@@ -27,6 +27,23 @@ if ( ! class_exists( 'Widgets_Init') ) :
                 'after_title'   => '</h5>',
             ) );
 
+            register_sidebar( array(
+                'name'          => 'Footer left',
+                'id'            => 'footer_left',
+                'before_widget' => '<div id="%1$s" class="page-footer__widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2 class="page-footer__widget-title">',
+                'after_title'   => '</h5>',
+            ) );
+
+            register_sidebar( array(
+                'name'          => 'Footer right',
+                'id'            => 'footer_right',
+                'before_widget' => '<div id="%1$s" class="page-footer__widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2 class="page-footer__widget-title">',
+                'after_title'   => '</h5>',
+            ) );
         }
 
     }

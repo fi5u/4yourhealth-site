@@ -1,5 +1,46 @@
 .page-footer {
+    &__sidebars {
+        border-top: 1px solid color(gray, lighter);
+    }
+
+        &__sidebars-inner {
+            @extend %layout-inner;
+
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+            &__sidebar {
+                &--left,
+                &--right {
+                    @include breakpoint(mini) {
+                        @include span(6 of 12);
+                    }
+                }
+
+                &--right {
+                    text-align: right;
+
+                    @include breakpoint(mini) {
+                        @include last;
+                    }
+                }
+            }
+
+                &__widget {
+
+                }
+
+                    &__widget-title {
+                        margin-top: 0;
+
+                        .widget_synved_social_follow & {
+                            display: none;
+                        }
+                    }
+
     &__bottom {
+        clear: both;
         border-top: 1px solid color(black);
     }
 
