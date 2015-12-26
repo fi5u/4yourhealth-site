@@ -1,6 +1,13 @@
 .testimonials {
     @extend %widget;
 
+    @include span(6 of 12);
+    @include last;
+
+    @include breakpoint(midi) {
+        @include full;
+    }
+
     &__title {
         @extend %title;
         @include font-size(title, widget);

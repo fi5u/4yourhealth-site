@@ -42,7 +42,7 @@
             });
 
             $('#carousel-testimonials').bxSlider({
-                mode: 'vertical',
+                mode: 'fade',
                 auto: true,
                 autoHover: true,
                 pager: false,
@@ -51,10 +51,12 @@
                 prevText: '<',
                 minSlides: 1,
                 maxSlides: 1,
+                slideWidth: 357,
                 adaptiveHeight: true
             });
 
             $('#carousel-news').bxSlider({
+                mode: 'fade',
                 auto: false,
                 autoHover: true,
                 pager: false,
@@ -63,6 +65,8 @@
                 prevText: '<',
                 minSlides: 1,
                 maxSlides: 1,
+                slideWidth: 357,
+                adaptiveHeight: true
             });
         });
 

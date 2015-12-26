@@ -1,6 +1,12 @@
 .news {
     @extend %widget;
 
+    @include span(6 of 12);
+
+    @include breakpoint($bp-sidebar-break) {
+        @include full;
+    }
+
     &__title {
         @extend %title;
         @include font-size(title, widget);
@@ -10,7 +16,7 @@
     }
 
     &__carousel {
-
+        padding-left: 0;
     }
 
         &__slide {
@@ -18,9 +24,7 @@
         }
 
             &__item {
-                & + .news__item {
-                    margin-top: 30px;
-                }
+                padding-bottom: 20px;
             }
 
                 &__img {
@@ -46,11 +50,11 @@
                     }
 
                 &__teaser {
-
+                    margin-bottom: 16px;
                 }
 
                 &__footer {
-                    padding-bottom: 15px;
+                    @include clearfix();
                 }
 
                     &__read-more {

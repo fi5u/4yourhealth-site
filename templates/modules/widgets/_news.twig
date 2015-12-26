@@ -1,53 +1,29 @@
 <section class="news">
     <h5 class="news__title">Latest news</h5>
     <ul class="news__carousel" id="carousel-news">
+        {% for news_item in news %}
         <li class="news__slide">
-            <article class="news__item">
-                <a href="#"><img src="http://placehold.it/270x120" alt="News title" class="news__img"></a>
-                <a href="#" class="news__item-title-link"><h6 class="news__item-title">35% discount on second purchase!</h6></a>
-                <div class="news__teaser">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo commodi a, nulla, error eaque earum. Quaerat sequi natus amet laboriosam error quisquam, in deleniti non, voluptatibus odit sapiente illo repellat!</p>
-                </div>
-                <div class="news__footer">
-                    <a href="#" class="news__read-more">Read more</a>
-                    <span class="news__pub-date">12.05.2015</span>
-                </div>
-            </article>
+                <article class="news__item">
+                    {% if news_item.thumbnail %}
+                        <a href="{{ news_item.link }}"><img src="{{ news_item.thumbnail.src }}" alt="News title" class="news__img"></a>
+                    {% endif %}
+                    <a href="{{ news_item.link }}" class="news__item-title-link"><h6 class="news__item-title">{{ news_item.title }}</h6></a>
+                    <div class="news__teaser">
+                        {{ news_item.post_content|excerpt(10) }}
+                    </div>
+                    <div class="news__footer">
+                        <a href="{{ news_item.link }}" class="news__read-more">Read more</a>
+                        <span class="news__pub-date">{{ news_item.post_date|date }}</span>
+                    </div>
+                </article>
+                {# {% if loop.index is divisibleby(2) %}
+                    </li>
+                    {% if not loop.last %}<li class="news__slide">{% endif %}
+                {% else %}
+                    {% if loop.last %}</li>{% endif %}
+                {% endif %} #}
 
-            <article class="news__item">
-                <a href="#" class="news__item-title-link"><h6 class="news__item-title">35% discount on second purchase!</h6></a>
-                <div class="news__teaser">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo commodi a, nulla, error eaque earum. Quaerat sequi natus amet laboriosam error quisquam, in deleniti non, voluptatibus odit sapiente illo repellat!</p>
-                </div>
-                <div class="news__footer">
-                    <a href="#" class="news__read-more">Read more</a>
-                    <span class="news__pub-date">12.05.2015</span>
-                </div>
-            </article>
         </li>
-        <li class="news__slide">
-            <article class="news__item">
-                <a href="#" class="news__item-title-link"><h6 class="news__item-title">35% discount on second purchase!</h6></a>
-                <div class="news__teaser">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo commodi a, nulla, error eaque earum. Quaerat sequi natus amet laboriosam error quisquam, in deleniti non, voluptatibus odit sapiente illo repellat!</p>
-                </div>
-                <div class="news__footer">
-                    <a href="#" class="news__read-more">Read more</a>
-                    <span class="news__pub-date">12.05.2015</span>
-                </div>
-            </article>
-
-            <article class="news__item">
-                <a href="#"><img src="http://placehold.it/270x120" alt="News title" class="news__img"></a>
-                <a href="#" class="news__item-title-link"><h6 class="news__item-title">35% discount on second purchase!</h6></a>
-                <div class="news__teaser">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo commodi a, nulla, error eaque earum. Quaerat sequi natus amet laboriosam error quisquam, in deleniti non, voluptatibus odit sapiente illo repellat!</p>
-                </div>
-                <div class="news__footer">
-                    <a href="#" class="news__read-more">Read more</a>
-                    <span class="news__pub-date">12.05.2015</span>
-                </div>
-            </article>
-        </li>
+        {% endfor %}
     </ul>
 </section>
