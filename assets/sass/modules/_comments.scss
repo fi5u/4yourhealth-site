@@ -1,0 +1,44 @@
+.comments {
+    padding-top: 80px;
+
+    &__respond {
+
+    }
+
+        &__title {
+
+        }
+
+    &__responses {
+
+    }
+
+        &__comment {
+
+        }
+
+            &__author {
+                @extend %title;
+
+                margin-bottom: 3px;
+            }
+
+            &__content {
+                padding-left: 30px;
+
+                p:first-child {
+                    margin-top: 0;
+                }
+            }
+}
+
+.comment-form {
+    a,
+    .submit {
+        @extend %btn--small;
+    }
+
+    label {
+        display: block;
+    }
+}

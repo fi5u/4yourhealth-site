@@ -25,6 +25,12 @@
     }
 }
 
+%btn--small {
+    @extend %btn;
+
+    padding: 4px 6px;
+}
+
 %input {
     @include font-size(input, lg);
 

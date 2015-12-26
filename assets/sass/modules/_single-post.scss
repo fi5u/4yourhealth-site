@@ -1,0 +1,31 @@
+.single-post {
+    &__content {
+
+    }
+
+        &__title {
+            @extend %title;
+
+            text-transform: uppercase;
+        }
+
+        &__author {
+            @include font-size(body, super-header);
+
+            margin-top: 0;
+            color: color(gray);
+            font-style: italic;
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+            &__body {
+
+            }
+}
