@@ -33,9 +33,9 @@
 }
 
 .comment-form {
-    a:not(.stars a),
+    a,
     .submit {
-        @extend %btn--small;
+        @extend %btn-small;
     }
 
     label {

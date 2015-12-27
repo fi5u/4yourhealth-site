@@ -1,3 +1,31 @@
+
+%btn-small {
+    @include font-size(button);
+
+    display: inline-block;
+    padding: 4px 6px;
+
+    color: color(gray, lightest);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: color(gray, dark);
+    border-top: 1px solid lighten(color(gray, dark), 15%);
+    border-radius: 3px;
+
+    &:hover,
+    &:focus {
+        background-color: $c-key;
+        border-top-color: $c-key-hl;
+    }
+
+    &:active {
+        background-color: $c-key-hl-extra;
+        border-top-color: $c-key-hl-extra;
+    }
+}
+
 %btn {
     @include font-size(button);
 
@@ -23,12 +51,6 @@
         background-color: $c-key-hl-extra;
         border-top-color: $c-key-hl-extra;
     }
-}
-
-%btn--small {
-    @extend %btn;
-
-    padding: 4px 6px;
 }
 
 %input {

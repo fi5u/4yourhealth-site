@@ -267,6 +267,12 @@ small.count {
 
     .stars {
         margin-top: 10px !important;
+
+        a {
+            border: none;
+            background: none;
+            border-radius: 0;
+        }
     }
 
     select[name='rating']+.select2 {
