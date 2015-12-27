@@ -1,3 +1,5 @@
+$bp-tab-panel: maxi;
+
 .woocommerce-pagination {
     margin-top: 50px;
 }
@@ -151,12 +153,10 @@ small.count {
 
 
 .wc-tabs-wrapper {
-    @include full;
-
     margin-top: 40px;
 
     .panel {
-        @include breakpoint($bp-sidebar-break) {
+        @include breakpoint($bp-tab-panel) {
             @include span(7 of 9);
             @include last;
 
@@ -167,41 +167,68 @@ small.count {
 
 .wc-tabs {
     margin-top: 0;
+    margin-left: -10px;
     padding: 0;
     list-style: none;
 
-    @include breakpoint($bp-sidebar-break) {
+    @include breakpoint($bp-tab-panel) {
         @include span(2 of 9);
     }
 
     li {
+        display: inline-block;
         position: relative;
-        padding: 16px 0;
+        padding: 8px 0;
+        margin: 0 10px;
 
-        + li {
-            border-top: 1px solid color(gray, lighter);
+        &.active {
+            @include breakpoint($bp-tab-panel) {
+                &:after {
+                    @include font(title);
+
+                    position: absolute;
+                    top: 27px;
+                    right: -38px;
+                    margin-top: -16px;
+
+                    content: ">";
+                    color: color(green, darker);
+                    font-size: 24px;
+                }
+            }
+
+            a {
+                color: color(green, darker);
+                border-bottom: 3px solid color(green, darker);
+            }
         }
 
         &:first-child {
             padding-top: 0;
 
             &.active:after {
-                margin-top: -24px;
+                top: 12px !important;
             }
         }
 
-        &.active {
-            &:after {
-                @include font(title);
+        a {
+            color: color(gray);
 
-                position: absolute;
-                top: 50%;
-                right: -12px;
-                margin-top: -16px;
-
-                content: ">";
+            &:hover {
                 color: color(green, darker);
-                font-size: 24px;
+            }
+
+            @include breakpoint($bp-tab-panel) {
+                border: none !important;
+            }
+        }
+
+        @include breakpoint($bp-tab-panel) {
+            display: block;
+            padding: 16px 0;
+
+            + li {
+                border-top: 1px solid color(gray, lighter);
             }
         }
     }
@@ -230,6 +257,7 @@ small.count {
 
 .stars {
     a {
+        font-size: 13px;
         color: color(green, darker);
     }
 }

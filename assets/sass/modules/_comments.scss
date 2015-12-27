@@ -33,7 +33,7 @@
 }
 
 .comment-form {
-    a,
+    a:not(.stars a),
     .submit {
         @extend %btn--small;
     }

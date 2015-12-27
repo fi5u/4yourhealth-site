@@ -13,7 +13,8 @@ $map: layout(12 0.05);
         margin-top: 0;
     }
 
-    .entry-summary {
+    .entry-summary,
+    .wc-tabs-wrapper {
         @include breakpoint($bp-sidebar-break) {
             @include span(5 of 9);
             @include last;
