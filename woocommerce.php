@@ -26,6 +26,8 @@ if (is_shop() || is_product_category()) {
     remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 }
 
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+
 
 function special_nav_class($classes, $item) {
     if (is_woocommerce() && $item->ID == 36) {
@@ -63,4 +65,3 @@ if (is_singular('product')) {
     Timber::render('templates/woo/archive.twig', $context);
 
 }
-

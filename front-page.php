@@ -42,7 +42,7 @@ if ($context['sort'] == 'latest') {
     $context['products'] = Timber::get_posts('post_type=product&posts_per_page=6&orderby=date');
 }
 
-if ($context['sort'] == 'bestseller') {
+if ($context['sort'] == 'bestseller' || !$context['sort']) {
     $args = array(
         'post_type'  => 'product',
         'posts_per_page' => 6,
@@ -56,6 +56,10 @@ if ($context['sort'] == 'bestseller') {
         ),
     );
     $context['products'] = Timber::get_posts($args);
+}
+
+if ($context['sort'] == 'all') {
+    $context['products'] = Timber::get_posts('post_type=product&posts_per_page=6&orderby=name&order=ASC');
 }
 
 $templates = array( 'front-page.twig', 'index.twig' );

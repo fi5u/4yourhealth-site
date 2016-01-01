@@ -1,11 +1,10 @@
 <section class="showcase" id="showcase">
-    <h2 class="showcase__title">Our Products</h2>
-    <p class="showcase__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsam nostrum debitis ea perferendis non optio soluta voluptates minus, ratione provident beatae eum asperiores aspernatur autem voluptas, maiores deserunt, fugiat.</p>
+    <h2 class="showcase__title">{{ __('[:en]Our Products[:fi]Meidän tuotteet[:]') }}</h2>
 
     <div class="showcase__filter-bar">
-        <a href="/#showcase" class="showcase__filter{% if not sort %} showcase__filter--is-selected{% endif %}" data-value="all">All</a>
-        <a href="/?sort=latest#showcase" class="showcase__filter{% if sort == 'latest' %} showcase__filter--is-selected{% endif %}" data-value="latest">Latest</a>
-        <a href="/?sort=bestseller#showcase" class="showcase__filter{% if sort == 'bestseller' %} showcase__filter--is-selected{% endif %}" data-value="bestsellers">Bestsellers</a>
+        <a href="/?sort=bestseller#showcase" class="showcase__filter{% if sort == 'bestseller' or sort == false %} showcase__filter--is-selected{% endif %}" data-value="bestsellers">{{ __('[:en]Bestsellers[:fi]Suosituimat[:]')}}</a>
+        <a href="/?sort=latest#showcase" class="showcase__filter{% if sort == 'latest' %} showcase__filter--is-selected{% endif %}" data-value="latest">{{ __('[:en]Latest[:fi]Viimeiset[:]')}}</a>
+        <a href="/?sort=all#showcase" class="showcase__filter{% if sort == 'all' %} showcase__filter--is-selected{% endif %}" data-value="all">{{ __('[:en]All[:fi]Kaikki[:]')}}</a>
     </div>
 
     <div class="showcase__grid">

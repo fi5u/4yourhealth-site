@@ -57,7 +57,7 @@
 
 {% macro add_to_cart(post) %}
 
-<a href="/shop/?add-to-cart={{ post.id }}" rel="nofollow" data-product_id="{{ post.id }}" data-product_sku="" data-quantity="1" class="card__btn add_to_cart_button product_type_simple">Add to cart</a>
+<a href="/shop/?add-to-cart={{ post.id }}" rel="nofollow" data-product_id="{{ post.id }}" data-product_sku="" data-quantity="1" class="card__btn add_to_cart_button product_type_simple">{{ __('[:en]Add to cart[:fi]Lisää ostoskoriin[:]') }}</a>
 
 {% endmacro %}
 

@@ -1,24 +1,26 @@
-<div class="testimonials">
-    <h5 class="testimonials__title">Testimonials</h5>
-    <ul class="testimonials__carousel" id="carousel-testimonials">
-        {% for testimonial in testimonials %}
-            <li class="testimonials__slide">
-                <div class="testimonials__bubble">
-                    <h6 class="testimonials__testimonial-title">{{ testimonial.title }}</h6>
-                    {{ testimonial.content }}
-                </div>
-                <div class="testimonials__side">
-                    {% if testimonial.thumbnail %}
-                        <div class="testimonials__avatar">
-                            <img src="{{ testimonial.thumbnail.src }}" alt="{{ testimonial.yh_testimonial_author }}" class="testimonials__avatar-img" width="70" height="70">
-                        </div>
-                    {% endif %}
-                    <div class="testimonials__details">
-                        <div class="testimonials__name">{{ testimonial.yh_testimonial_author }}</div>
-                        <div class="testimonials__date">{{ testimonial.post_date|date }}</div>
+{% if testimonials %}
+    <div class="testimonials">
+        <h5 class="testimonials__title">{{ __('[:en]Testimonials[:fi]Suositukset[:]') }}</h5>
+        <ul class="testimonials__carousel" id="carousel-testimonials">
+            {% for testimonial in testimonials %}
+                <li class="testimonials__slide">
+                    <div class="testimonials__bubble">
+                        <h6 class="testimonials__testimonial-title">{{ testimonial.title }}</h6>
+                        {{ testimonial.content }}
                     </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
+                    <div class="testimonials__side">
+                        {% if testimonial.thumbnail %}
+                            <div class="testimonials__avatar">
+                                <img src="{{ testimonial.thumbnail.src }}" alt="{{ testimonial.yh_testimonial_author }}" class="testimonials__avatar-img" width="70" height="70">
+                            </div>
+                        {% endif %}
+                        <div class="testimonials__details">
+                            <div class="testimonials__name">{{ testimonial.yh_testimonial_author }}</div>
+                            <div class="testimonials__date">{{ testimonial.post_date|date }}</div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

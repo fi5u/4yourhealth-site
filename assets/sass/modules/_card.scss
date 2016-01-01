@@ -62,10 +62,10 @@
     &__img-link {
         display: block;
         position: relative;
-        margin-right: 8%;
 
         .card--wide & {
             float: left;
+            margin-right: 20px;
         }
     }
 

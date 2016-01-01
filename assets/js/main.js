@@ -17,7 +17,16 @@
         });
 
         $('#select-super-header-lang').change(function() {
-            window.location = $('#select-super-header-lang').val();
+            var url = data.currentUrl;
+            var lang = data.currentLang;
+            var targetLang = $('#select-super-header-lang').val();
+            var targetUrl;
+            if (url.indexOf('/' + lang + '/') === -1) {
+                targetUrl = targetLang + url;
+            } else {
+                targetUrl = url.replace('/' + lang + '/', targetLang);
+            }
+            window.location = targetUrl;
         });
 
         $('select.orderby').select2();

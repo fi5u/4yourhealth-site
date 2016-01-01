@@ -139,14 +139,16 @@ $h-super-header: 35px;
                                 outline: 1px solid #d8e7bd;
                             }
 
-                            &[title="Finnish"] {
+                            &[title="Finnish"],
+                            &[title="Suomi"] {
                                 &:before {
                                     background: url(assets/images/flag-fi.png) no-repeat;
                                     background-size: 16px 13px;
                                 }
                             }
 
-                            &[title="English"] {
+                            &[title="English"],
+                            &[title="Englantti"] {
                                 &:before {
                                     background: url(assets/images/flag-uk.jpg) no-repeat;
                                     background-size: 16px 13px;

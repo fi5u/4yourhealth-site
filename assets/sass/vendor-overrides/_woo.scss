@@ -81,6 +81,12 @@ $bp-tab-panel: maxi;
             background-color: color(gray, lighter);
         }
 
+        .price_slider_amount {
+            .button {
+                display: inline-block;
+            }
+        }
+
         .ui-slider {
             .ui-slider-range {
                 background-color: color(green, darker);

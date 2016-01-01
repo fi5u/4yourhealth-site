@@ -1,4 +1,4 @@
-div.widget_wysija {
+.widget_knews_widget {
     @extend %widget;
 
     padding: 22px;
@@ -25,10 +25,24 @@ div.widget_wysija {
     input[type="text"] {
         @extend %input;
 
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
     }
 
-    .wysija-submit {
+    [type="submit"].knewsbutton {
         @extend %btn;
+
+        margin: 0 auto;
+    }
+
+    [type="text"].knewsemail {
+        width: 100%;
+    }
+
+    fieldset.knewsemail {
+        padding-bottom: 0;
+    }
+
+    fieldset.requiredtext {
+        padding-top: 0;
     }
 }

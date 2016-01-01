@@ -11,6 +11,6 @@
         {{ post.content }}
     </div>
 
-    {% include 'modules/_product_carousel.twig' with {'title': 'On Sale', 'subtitle': 'Only with us you can get a new model with a discount.', 'products': sale_products, currency_symbol: currency_symbol} only %}
+    {% include 'modules/_product_carousel.twig' with {'title': __('[:en]On Sale[:fi]Ale[:]'), 'subtitle': false, 'products': sale_products, currency_symbol: currency_symbol} only %}
 
 {% endblock %}

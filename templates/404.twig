@@ -1,5 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+    <div class="four04">
+        <h1 class="four04__title">{{ __('[:en]Sorry, we couldn\'t find what you\'re looking for.[:fi]Sivua ei löytynyt![:]') }}</h1>
+
+        <div class="four04__content">
+            {% include 'modules/_product_carousel.twig' with {'title': __('[:en]On Sale[:fi]Ale[:]'), 'subtitle': false, 'products': sale_products, currency_symbol: currency_symbol} only %}
+        </div>
+    </div>
 {% endblock %}

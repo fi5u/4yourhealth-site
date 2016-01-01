@@ -17,6 +17,21 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <link rel="pingback" href="{{site.pingback_url}}">
+
+	    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a8bf00">
+		<meta name="msapplication-TileColor" content="#a8bf00">
+		<meta name="theme-color" content="#ffffff">
+
 	    {{function('wp_head')}}
 	</head>
 
@@ -35,13 +50,13 @@
 
 					<div class="super-header__selectors">
 						<select name="user-language" id="select-super-header-lang" class="super-header__selector--lang">
-							<option value="/en/"{% if lang_current == 'en' %} selected{% endif %}>English</option>
-							<option value="/fi/"{% if lang_current == 'fi' %} selected{% endif %}>Finnish</option>
+							<option value="/en/"{% if lang_current == 'en' %} selected{% endif %}>{{ __('[:en]English[:fi]Englantti[:]') }}</option>
+							<option value="/fi/"{% if lang_current == 'fi' %} selected{% endif %}>{{ __('[:en]Finnish[:fi]Suomi[:]') }}</option>
 						</select>
 					</div>
 
 					<div class="super-header__search-block">
-						<input type="search" class="page-header__search" placeholder="Search"><button type="submit" class="page-header__search-submit"></button>
+						<input type="search" class="page-header__search" placeholder="{{ __('[:en]Search[:fi]Haku[:]') }}"><button type="submit" class="page-header__search-submit"></button>
 					</div>
 				</div>
 			</div>
@@ -57,15 +72,17 @@
 						<nav class="page-header__nav">
 							<div class="page-header__nav-items">
 								{% for item in menu.get_items %}
-									<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{ item.title }}</a>
+									<div class="page-header__nav-item-wrap">
+										<a href="{{ item.get_link }}" class="page-header__nav-item {{ item.classes|join(' ') }}">{{ item.title }}</a>
 
-									{% if item.get_children %}
-										<div class="page-header__nav-children">
-											{% for child in item.get_children %}
-					                            <a href="{{ child.get_link }}" class="page-header__nav-item page-header__nav-item--child {{ child.classes|join(' ') }}">{{ child.title }}</a>
-					                        {% endfor %}
-										</div>
-									{% endif %}
+										{% if item.get_children %}
+											<div class="page-header__nav-children">
+												{% for child in item.get_children %}
+						                            <a href="{{ child.get_link }}" class="page-header__nav-item page-header__nav-item--child {{ child.classes|join(' ') }}">{{ child.title }}</a>
+						                        {% endfor %}
+											</div>
+										{% endif %}
+									</div>
 								{% endfor %}
 							</div>
 						</nav>
@@ -82,12 +99,12 @@
 						<div class="page-header__search-block">
 							<form action="/" method="get">
 								<input type="hidden" value="product" name="post_type" id="post_type" />
-								<input type="search" class="page-header__search" placeholder="Search" name="s" value="{{ search_query }}"><button type="submit" class="page-header__search-submit"></button>
+								<input type="search" class="page-header__search" placeholder="{{ __('[:en]Search[:fi]Haku[:]') }}" name="s" value="{{ search_query }}"><button type="submit" class="page-header__search-submit"></button>
 							</form>
 						</div>
 
 						<div class="page-header__basket">
-							<button class="page-header__basket-btn"><span id="mini-cart-count">{{ cart_count }}</span> item(s) - <span id="mini-cart-total">{{ cart_total }}</span></button>
+							<button class="page-header__basket-btn"><span id="mini-cart-count">{{ cart_count }}</span> {{ __('[:en]item(s)[:fi]kpl[:]') }} - <span id="mini-cart-total">{{ cart_total }}</span></button>
 
 							{{ cart }}
 						</div>

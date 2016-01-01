@@ -28,6 +28,11 @@ if ( ! class_exists( 'Wp_Enqueue_Scripts') ) :
                 'bxslider'
             );
             wp_enqueue_script( 'main',  get_stylesheet_directory_uri() . '/assets/js/main.js', $main_dependencies, '03112015', true );
+            $data = array(
+                'currentLang'   => qtranxf_getLanguage(),
+                'currentUrl'    => add_query_arg( NULL, NULL )
+            );
+            wp_localize_script( 'main', 'data', $data );
 
             if ( class_exists( 'woocommerce' ) ) {
                 wp_dequeue_style( 'select2' );
