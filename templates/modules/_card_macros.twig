@@ -3,9 +3,8 @@
 {% if post.custom._sale_price[0] %}
     {% set old_price = post.custom._regular_price[0] %}
 {% endif %}
-
 <div class="card__price-wrap">
-    <div class="card__price">{% if old_price %}<span class="card__price--old">{{ currency_symbol }} {{ old_price }}</span><br>{% endif %}{{ currency_symbol }} {{ post.custom._price[0] }}</div>
+    <div class="card__price">{% if old_price %}<span class="card__price--old">{{ currency_symbol }} {{ old_price }}</span><br>{% endif %}{{ currency_symbol }} {% if post._price is iterable %}{{ post.custom._price[0] }}{% else %}{{ post._price }}{% endif %}</div>
 </div>
 {% endmacro %}
 
