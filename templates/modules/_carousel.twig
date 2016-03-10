@@ -5,6 +5,9 @@
             {% for slide in slides %}
             <li>
                 <div class="carousel__content" style="background-image: url({{ slide.thumbnail.src('carousel_slide') }}); background-position: bottom center;">
+                    {% if slide.yh_carousel_slide_price %}
+                        <div class="carousel__price-badge"><div class="carousel__price">{{ slide.yh_carousel_slide_price }}</div></div>
+                    {% endif %}
                     <div class="carousel__text">
                         <h2 class="carousel__title">{{ slide.title }}</h2>
                         {% if slide.content %}
@@ -14,9 +17,6 @@
                             <a href="{{ slide.yh_carousel_slide_link }}" class="carousel__link">Learn more</a>
                         {% endif %}
                     </div>
-                    {% if slide.yh_carousel_slide_price %}
-                        <div class="carousel__price-badge">{{ slide.yh_carousel_slide_price }}</div>
-                    {% endif %}
                 </div>
             </li>
             {% endfor %}
