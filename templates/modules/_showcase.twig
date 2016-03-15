@@ -4,7 +4,7 @@
     <div class="showcase__filter-bar">
         <a href="/?sort=bestseller#showcase" class="showcase__filter{% if sort == 'bestseller' or sort == false %} showcase__filter--is-selected{% endif %}" data-value="bestsellers">{{ __('[:en]Bestsellers[:fi]Suosituimat[:]')}}</a>
         <a href="/?sort=latest#showcase" class="showcase__filter{% if sort == 'latest' %} showcase__filter--is-selected{% endif %}" data-value="latest">{{ __('[:en]Latest[:fi]Viimeiset[:]')}}</a>
-        <a href="/?sort=all#showcase" class="showcase__filter{% if sort == 'all' %} showcase__filter--is-selected{% endif %}" data-value="all">{{ __('[:en]All[:fi]Kaikki[:]')}}</a>
+        <a href="/shop" class="showcase__filter{% if sort == 'all' %} showcase__filter--is-selected{% endif %}" data-value="all">{{ __('[:en]All[:fi]Kaikki[:]')}}</a>
     </div>
 
     <div class="showcase__grid">
